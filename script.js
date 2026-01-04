@@ -1,96 +1,39 @@
-const cursor = document.querySelector("#cursor");
+const cursor = document.getElementById("cursor");
 
-const leftSound = new Audio("https://assets.mixkit.co/sfx/preview/mixkit-metal-hit-1930.mp3");
-const rightSound = new Audio("https://assets.mixkit.co/sfx/preview/mixkit-click-error-1110.mp3");
-const scrollSound = new Audio("https://assets.mixkit.co/sfx/preview/mixkit-fast-small-sweep-transition-166.mp3");
+const cutSound = new Audio("assets/sound/cut.mp3");
+const rightSound = new Audio("assets/sound/right.mp3");
+const scrollSound = new Audio("assets/sound/scroll.mp3");
 
-/* CURSOR MOVE */
-document.addEventListener("mousemove", e=>{
-  gsap.to(cursor,{
-    x:e.clientX,
-    y:e.clientY,
-    duration:0
-  });
+// Mouse follow
+document.addEventListener("mousemove", e => {
+  cursor.style.left = e.clientX + "px";
+  cursor.style.top = e.clientY + "px";
 });
 
-/* LEFT CLICK */
-document.addEventListener("mousedown",()=>{
-  leftSound.play();
-  gsap.to(cursor,{scale:0.7,rotate:-90,duration:0.05});
+// Left click = cut
+document.addEventListener("mousedown", e => {
+  if (e.button === 0) {
+    cutSound.currentTime = 0;
+    cutSound.play();
+
+    cursor.classList.add("cut");
+  }
 });
 
-/* RIGHT CLICK */
-document.addEventListener("contextmenu",e=>{
+// Release = open
+document.addEventListener("mouseup", () => {
+  cursor.classList.remove("cut");
+});
+
+// Right click
+document.addEventListener("contextmenu", e => {
   e.preventDefault();
+  rightSound.currentTime = 0;
   rightSound.play();
 });
 
-/* RELEASE */
-document.addEventListener("mouseup",()=>{
-  gsap.to(cursor,{scale:1,rotate:-135,duration:0.05});
-});
-
-/* SCROLL */
-window.addEventListener("wheel",()=>{
+// Scroll
+window.addEventListener("wheel", () => {
+  scrollSound.currentTime = 0;
   scrollSound.play();
-});
-
-/* ENTRANCE ANIMATION */
-gsap.from("header",{y:-60,opacity:0,duration:1});
-gsap.from(".hero-img",{x:-120,opacity:0,duration:1});
-gsap.from(".hero-text>*",{x:120,opacity:0,stagger:0.2,duration:1});
-/* ===== PORTFOLIO FILTER ===== */
-
-const filterBtns = document.querySelectorAll(".portfolio-filter button");
-const cards = document.querySelectorAll(".portfolio-card");
-
-filterBtns.forEach(btn=>{
-  btn.addEventListener("click",()=>{
-    filterBtns.forEach(b=>b.classList.remove("active"));
-    btn.classList.add("active");
-
-    const filter = btn.getAttribute("data-filter");
-
-    cards.forEach(card=>{
-      if(filter==="all" || card.classList.contains(filter)){
-        card.style.display="block";
-        gsap.from(card,{opacity:0,y:30,duration:0.4});
-      }else{
-        card.style.display="none";
-      }
-    });
-  });
-});
-/* ===== ABOUT PAGE ANIMATION ===== */
-
-gsap.from(".about-tag",{opacity:0,y:-20,duration:1});
-gsap.from(".about-name",{opacity:0,x:-60,duration:1,delay:0.2});
-gsap.from(".about-desc",{opacity:0,x:-60,duration:1,delay:0.4});
-gsap.from(".stat",{opacity:0,y:30,stagger:0.2,delay:0.6});
-gsap.from(".skills-box",{opacity:0,x:60,duration:1,delay:0.5});
-/* ===== SERVICE PAGE ANIMATION ===== */
-
-gsap.from(".section-head h4",{opacity:0,y:-20,duration:1});
-gsap.from(".section-head h1",{opacity:0,y:-30,duration:1,delay:0.2});
-gsap.from(".section-head p",{opacity:0,y:-20,duration:1,delay:0.4});
-
-gsap.from(".service-card",{
-  opacity:0,
-  y:60,
-  stagger:0.15,
-  duration:1,
-  delay:0.6
-});
-/* ===== CONTACT PAGE ANIMATION ===== */
-
-gsap.from(".contact-box h4",{opacity:0,y:-20,duration:1});
-gsap.from(".contact-box h1",{opacity:0,y:-30,duration:1,delay:0.2});
-gsap.from(".contact-box p",{opacity:0,y:-20,duration:1,delay:0.4});
-
-gsap.from(".contact-card",{
-  opacity:0,
-  y:60,
-  stagger:0.15,
-  duration:1,
-  delay:0.6
 });
