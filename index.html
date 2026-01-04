@@ -1,38 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ProperCut | Hasan Abdullah</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- CSS -->
+<link rel="stylesheet" href="style.css">
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+
 <body>
 
+<!-- Custom Cursor -->
 <div id="cursor"><i class="fa-solid fa-scissors"></i></div>
 
 <header>
   <div class="logo">Proper<span>Cut</span></div>
   <nav>
-      <a href="index.html" class="hover-anim">Home</a>
-      <a href="service.html" class="hover-anim">Service</a>
-      <a href="portfolio.html" class="hover-anim">Portfolio</a>
-      <a href="about.html" class="hover-anim">About</a>
-      <a href="contact.html" class="hover-anim">Contact</a>
+    <a href="index.html">Home</a>
+    <a href="service.html">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" class="nav-btn">Contact</a>
   </nav>
 </header>
 
 <section class="hero">
-  <div class="hero-left">
-    <div class="image-border-box">
-      <div class="image-inner">
-        <img src="./assets/img/hasan.jpg" alt="Hasan Abdullah">
-      </div>
-    </div>
-  </div>
+  <div class="hero-bg-glow"></div>
 
-  <div class="hero-right">
-    <h4 class="brand-sub hover-anim">VIDEO EDITOR & STRATEGIST</h4>
-    <h1 class="main-title hover-anim">Hasan <br><span>Abdullah</span></h1>
-    <p class="description hover-anim">
-      Creating high-retention YouTube documentaries and faceless automation videos that scale channels.
-    </p>
-    <div class="cta-group">
-      <a href="portfolio.html" class="btn-primary hover-anim">View Portfolio</a>
+  <div class="hero-wrap">
+    <div class="hero-img">
+      <img src="assets/img/hasan.jpg" alt="Hasan Abdullah">
+    </div>
+
+    <div class="hero-text">
+      <h4>VIDEO EDITOR & STRATEGIST</h4>
+      <h1>Hasan <span>Abdullah</span></h1>
+      <p>
+        Founder of <b>ProperCut</b>.<br>
+        Creating high-retention YouTube documentaries, faceless automation & cinematic edits.
+      </p>
+      <a href="portfolio.html" class="btn">View Portfolio</a>
     </div>
   </div>
 </section>
 
 <script src="script.js"></script>
 </body>
+</html>
