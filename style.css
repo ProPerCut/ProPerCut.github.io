@@ -18,6 +18,7 @@ a, button {
 }
 
 /* Scissor Cursor Style */
+/* কাঁচি কার্সারের নতুন স্টাইল (বাম দিকে মুখ করা) */
 #cursor {
     position: fixed;
     top: 0;
@@ -27,10 +28,23 @@ a, button {
     color: #00ffff;
     font-size: 28px;
     text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
-    transform: translate(-50%, -50%) rotate(-45deg);
+    /* -135deg দিলে এটি বাম দিকে সুন্দরভাবে ঘুরে থাকবে */
+    transform: translate(-50%, -50%) rotate(-135deg); 
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* ক্লিক করলে যে স্পার্ক/লাইট তৈরি হবে তার স্টাইল */
+.spark {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
 }
 
 /* Header */
