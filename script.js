@@ -39,3 +39,25 @@ window.addEventListener("wheel",()=>{
 gsap.from("header",{y:-60,opacity:0,duration:1});
 gsap.from(".hero-img",{x:-120,opacity:0,duration:1});
 gsap.from(".hero-text>*",{x:120,opacity:0,stagger:0.2,duration:1});
+/* ===== PORTFOLIO FILTER ===== */
+
+const filterBtns = document.querySelectorAll(".portfolio-filter button");
+const cards = document.querySelectorAll(".portfolio-card");
+
+filterBtns.forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    filterBtns.forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+
+    const filter = btn.getAttribute("data-filter");
+
+    cards.forEach(card=>{
+      if(filter==="all" || card.classList.contains(filter)){
+        card.style.display="block";
+        gsap.from(card,{opacity:0,y:30,duration:0.4});
+      }else{
+        card.style.display="none";
+      }
+    });
+  });
+});
