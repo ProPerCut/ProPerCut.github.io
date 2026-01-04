@@ -402,3 +402,12 @@ nav a{
   transform:translateY(-12px) scale(1.05);
   box-shadow:0 0 80px rgba(0,255,255,0.4);
 }
+/* ===== ADVANCED CURSOR FEEL ===== */
+
+#cursor{
+  transition: filter 0.2s ease;
+}
+
+#cursor:hover{
+  filter: drop-shadow(0 0 15px #00ffff);
+}
