@@ -76,13 +76,24 @@ nav a{
   z-index:2;
 }
 
-/* IMAGE */
-.hero-img img{
-  width:420px;
-  filter:drop-shadow(0 0 80px rgba(0,255,255,0.6));
-  animation:float 6s ease-in-out infinite;
+/* HERO IMAGE - Oval Template */
+.hero-img {
+  width: 420px;      /* Width of the oval */
+  height: 500px;     /* Height larger than width for oval shape */
+  border-radius: 50% / 40%; /* Oval shape */
+  overflow: hidden;          /* Keep image inside oval */
+  border: 4px solid #00ffff; /* Neon border */
+  box-shadow: 0 0 60px rgba(0,255,255,0.6); /* Glow effect */
 }
 
+.hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* Fill oval without distortion */
+  animation: float 6s ease-in-out infinite; /* Floating animation */
+}
+
+/* FLOAT ANIMATION */
 @keyframes float{
   0%{transform:translateY(0)}
   50%{transform:translateY(-20px)}
@@ -125,6 +136,7 @@ nav a{
   font-weight:700;
   border-radius:4px;
 }
+
 /* ================= PORTFOLIO PAGE ================= */
 
 .portfolio{
@@ -203,6 +215,7 @@ nav a{
 .portfolio-card h4{
   font-weight:500;
 }
+
 /* ================= ABOUT PAGE ================= */
 
 .about{
@@ -273,6 +286,7 @@ nav a{
   color:#ddd;
   font-size:15px;
 }
+
 /* ================= SERVICE PAGE ================= */
 
 .services{
@@ -339,6 +353,7 @@ nav a{
   transform:translateY(-15px) scale(1.02);
   box-shadow:0 0 80px rgba(0,255,255,0.35);
 }
+
 /* ================= CONTACT PAGE ================= */
 
 .contact{
@@ -402,6 +417,7 @@ nav a{
   transform:translateY(-12px) scale(1.05);
   box-shadow:0 0 80px rgba(0,255,255,0.4);
 }
+
 /* ===== ADVANCED CURSOR FEEL ===== */
 
 #cursor{
@@ -411,6 +427,7 @@ nav a{
 #cursor:hover{
   filter: drop-shadow(0 0 15px #00ffff);
 }
+
 /* ===== CUSTOM CURSOR ===== */
 body {
   cursor: none;
@@ -444,20 +461,20 @@ body {
   pointer-events: none;
   z-index: 9998;
 }
-body {
-  cursor: none;
-}
 
-#cursor {
-  position: fixed;
-  transform: translate(-50%, -50%) rotate(-135deg);
-  font-size: 28px;
-  color: #00ffff;
-  pointer-events: none;
-  z-index: 9999;
-  transition: transform 0.1s ease;
-}
+/* ===== RESPONSIVE HERO IMAGE ===== */
+@media screen and (max-width: 768px){
+  .hero-wrap{
+    flex-direction: column;
+    gap: 40px;
+  }
 
-#cursor.cut {
-  transform: translate(-50%, -50%) rotate(-90deg) scale(0.85);
+  .hero-img {
+    width: 280px;
+    height: 330px; /* proportional oval for mobile */
+  }
+
+  .hero-text h1{
+    font-size: 3rem;
+  }
 }
