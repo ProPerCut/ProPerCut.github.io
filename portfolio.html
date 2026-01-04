@@ -1,84 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | ProperCut</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
 <body>
+
 <div id="cursor">
   <i class="fa-solid fa-scissors"></i>
 </div>
 
-<header> ... </header>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio | ProperCut</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<link rel="stylesheet" href="style.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-</head>
-
-<body>
-
 <header>
   <div class="logo">Proper<span>Cut</span></div>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="service.html">Services</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="about.html">About</a>
-    <a href="contact.html" class="nav-btn">Contact</a>
+      <a href="index.html" class="hover-anim">Home</a>
+      <a href="service.html" class="hover-anim">Service</a>
+      <a href="portfolio.html" class="hover-anim">Portfolio</a>
+      <a href="about.html" class="hover-anim">About</a>
+      <a href="contact.html" class="hover-anim">Contact</a>
   </nav>
 </header>
 
 <section class="portfolio">
-
-  <div class="section-head">
-    <h4>MY WORK</h4>
-    <h1>Editing Portfolio</h1>
-    <p>High-retention edits crafted for YouTube growth & monetization.</p>
-  </div>
-
+  <h2 class="section-title hover-anim">My Work</h2>
+  
   <div class="portfolio-grid">
-
-    <!-- CARD 1 -->
-    <div class="portfolio-card">
-      <div class="video-thumb">
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" allowfullscreen></iframe>
-      </div>
-      <h3>YouTube Automation</h3>
-      <span>Faceless Cash-Cow Content</span>
+    <div class="portfolio-item hover-anim">
+      <a href="#" target="_blank">YouTube Automation</a>
+      <!-- Future: iframe or thumbnail -->
     </div>
-
-    <!-- CARD 2 -->
-    <div class="portfolio-card">
-      <div class="video-thumb">
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe>
-      </div>
-      <h3>Cash Cow Editing</h3>
-      <span>Retention Focused</span>
+    <div class="portfolio-item hover-anim">
+      <a href="#" target="_blank">Cash Cow</a>
     </div>
-
-    <!-- CARD 3 -->
-    <div class="portfolio-card">
-      <div class="video-thumb">
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" allowfullscreen></iframe>
-      </div>
-      <h3>Documentary</h3>
-      <span>Cinematic Storytelling</span>
+    <div class="portfolio-item hover-anim">
+      <a href="#" target="_blank">Documentary</a>
     </div>
-
-    <!-- CARD 4 -->
-    <div class="portfolio-card">
-      <div class="video-thumb">
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" allowfullscreen></iframe>
-      </div>
-      <h3>Historical Content</h3>
-      <span>Archive & Visual Editing</span>
+    <div class="portfolio-item hover-anim">
+      <a href="#" target="_blank">Historical</a>
     </div>
-
   </div>
-
 </section>
 
 <script src="script.js"></script>
