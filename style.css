@@ -415,6 +415,52 @@ body {
   z-index: 9999;
   transition: transform 0.1s ease;
 }
+/* ===== CUSTOM CURSOR ===== */
+body {
+  cursor: none;
+}
+
+/* Cursor scissor */
+#cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%) rotate(-135deg);
+  font-size: 28px;
+  color: #00ffff;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.15s ease, color 0.2s ease, font-size 0.2s ease;
+}
+
+/* Click → scissor close */
+#cursor.cut {
+  transform: translate(-50%, -50%) rotate(-90deg) scale(0.85);
+}
+
+/* Spark */
+.spark {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: #00ffff;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #00ffff;
+  pointer-events: none;
+  z-index: 9998;
+}
+
+/* Hover text effect */
+.hover-anim {
+  transition: color 0.3s ease, font-weight 0.3s ease, transform 0.3s ease;
+}
+
+.hover-anim:hover {
+  color: #ff00ff;
+  font-weight: 700;
+  transform: scale(1.1);
+  text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+}
 
 #cursor.cut {
   transform: translate(-50%, -50%) rotate(-90deg) scale(0.85);
