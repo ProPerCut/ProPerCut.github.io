@@ -1,48 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio | ProperCut</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio | ProperCut</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- CSS -->
+<link rel="stylesheet" href="style.css">
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
+
 <body>
 
-<div id="cursor">
-  <i class="fa-solid fa-scissors"></i>
-</div>
+<div id="cursor"><i class="fa-solid fa-scissors"></i></div>
 
 <header>
   <div class="logo">Proper<span>Cut</span></div>
   <nav>
-      <a href="index.html" class="hover-anim">Home</a>
-      <a href="service.html" class="hover-anim">Service</a>
-      <a href="portfolio.html" class="hover-anim">Portfolio</a>
-      <a href="about.html" class="hover-anim">About</a>
-      <a href="contact.html" class="hover-anim">Contact</a>
+    <a href="index.html">Home</a>
+    <a href="service.html">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" class="nav-btn">Contact</a>
   </nav>
 </header>
 
 <section class="portfolio">
-  <h2 class="section-title hover-anim">My Work</h2>
-  
+  <h1 class="page-title">Portfolio</h1>
+
+  <!-- CATEGORY FILTER -->
+  <div class="portfolio-filter">
+    <button class="active" data-filter="all">All</button>
+    <button data-filter="automation">YouTube Automation</button>
+    <button data-filter="cashcow">Cash Cow</button>
+    <button data-filter="documentary">Documentary</button>
+    <button data-filter="historical">Historical</button>
+  </div>
+
+  <!-- GRID -->
   <div class="portfolio-grid">
-    <div class="portfolio-item hover-anim">
-      <a href="#" target="_blank">YouTube Automation</a>
-      <!-- Future: iframe or thumbnail -->
+
+    <!-- CARD -->
+    <div class="portfolio-card automation">
+      <div class="video-thumb">
+        <i class="fa-solid fa-play"></i>
+      </div>
+      <h4>YouTube Automation Video</h4>
     </div>
-    <div class="portfolio-item hover-anim">
-      <a href="#" target="_blank">Cash Cow</a>
+
+    <div class="portfolio-card cashcow">
+      <div class="video-thumb">
+        <i class="fa-solid fa-play"></i>
+      </div>
+      <h4>Cash Cow Faceless Edit</h4>
     </div>
-    <div class="portfolio-item hover-anim">
-      <a href="#" target="_blank">Documentary</a>
+
+    <div class="portfolio-card documentary">
+      <div class="video-thumb">
+        <i class="fa-solid fa-play"></i>
+      </div>
+      <h4>Documentary Storytelling</h4>
     </div>
-    <div class="portfolio-item hover-anim">
-      <a href="#" target="_blank">Historical</a>
+
+    <div class="portfolio-card historical">
+      <div class="video-thumb">
+        <i class="fa-solid fa-play"></i>
+      </div>
+      <h4>Historical Explainer</h4>
     </div>
+
+    <div class="portfolio-card documentary">
+      <div class="video-thumb">
+        <i class="fa-solid fa-play"></i>
+      </div>
+      <h4>Long-form Documentary</h4>
+    </div>
+
   </div>
 </section>
 
