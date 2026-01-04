@@ -1,50 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProperCut | Hasan Abdullah</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-</head>
-<body>
+/* ===== HERO PC DESIGN ===== */
 
-    <div id="cursor"><i class="fa-solid fa-scissors"></i></div>
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 12%;
+}
 
-    <header>
-        <div class="logo">Proper<span>Cut</span></div>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Service</a>
-            <a href="#">Portfolio</a>
-            <a href="#">About</a>
-            <a href="#" class="nav-btn">Contact</a>
-        </nav>
-    </header>
+.hero-img img{
+  width:480px;              /* image বড় */
+  border-radius:30px;
+  box-shadow:0 0 80px rgba(0,255,255,0.6);
+  animation: imgIn 1.5s ease forwards;
+}
 
-    <section class="hero">
-        <div class="container">
-            <div class="hero-left">
-                <div class="image-border-box">
-                    <div class="image-inner">
-                        <img src="./assets/img/hasan.jpg" alt="Hasan Abdullah">
-                    </div>
-                </div>
-            </div>
+.hero-text{
+  max-width:500px;
+  animation: textIn 1.5s ease forwards;
+}
 
-            <div class="hero-right">
-                <h4 class="brand-sub">VIDEO EDITOR & STRATEGIST</h4>
-                <h1 class="main-title">Hasan <br><span>Abdullah</span></h1>
-                <p class="description">Creating high-retention YouTube documentaries and faceless automation videos that scale channels.</p>
-                <div class="cta-group">
-                    <a href="#" class="btn-primary">View Portfolio</a>
-                </div>
-            </div>
-        </div>
-    </section>
+.brand{
+  color:#00ffff;
+  letter-spacing:4px;
+  font-size:15px;
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
+.name{
+  font-size:4.2rem;         /* নাম বড় */
+  margin:15px 0;
+}
+
+.services{
+  font-size:1.2rem;
+  color:#aaa;
+  line-height:1.9;
+}
+
+/* ===== ANIMATION ===== */
+
+@keyframes imgIn{
+  from{
+    opacity:0;
+    transform:translateX(-80px);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0);
+  }
+}
+
+@keyframes textIn{
+  from{
+    opacity:0;
+    transform:translateX(80px);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0);
+  }
+}
