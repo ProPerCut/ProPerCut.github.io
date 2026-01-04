@@ -68,3 +68,16 @@ gsap.from(".about-name",{opacity:0,x:-60,duration:1,delay:0.2});
 gsap.from(".about-desc",{opacity:0,x:-60,duration:1,delay:0.4});
 gsap.from(".stat",{opacity:0,y:30,stagger:0.2,delay:0.6});
 gsap.from(".skills-box",{opacity:0,x:60,duration:1,delay:0.5});
+/* ===== SERVICE PAGE ANIMATION ===== */
+
+gsap.from(".section-head h4",{opacity:0,y:-20,duration:1});
+gsap.from(".section-head h1",{opacity:0,y:-30,duration:1,delay:0.2});
+gsap.from(".section-head p",{opacity:0,y:-20,duration:1,delay:0.4});
+
+gsap.from(".service-card",{
+  opacity:0,
+  y:60,
+  stagger:0.15,
+  duration:1,
+  delay:0.6
+});
