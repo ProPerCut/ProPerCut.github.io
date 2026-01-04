@@ -402,3 +402,20 @@ nav a{
   transform:translateY(-12px) scale(1.05);
   box-shadow:0 0 80px rgba(0,255,255,0.4);
 }
+body {
+  cursor: none;
+}
+
+#cursor {
+  position: fixed;
+  transform: translate(-50%, -50%) rotate(-135deg);
+  font-size: 28px;
+  color: #00ffff;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s ease;
+}
+
+#cursor.cut {
+  transform: translate(-50%, -50%) rotate(-90deg) scale(0.85);
+}
