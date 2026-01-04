@@ -81,3 +81,16 @@ gsap.from(".service-card",{
   duration:1,
   delay:0.6
 });
+/* ===== CONTACT PAGE ANIMATION ===== */
+
+gsap.from(".contact-box h4",{opacity:0,y:-20,duration:1});
+gsap.from(".contact-box h1",{opacity:0,y:-30,duration:1,delay:0.2});
+gsap.from(".contact-box p",{opacity:0,y:-20,duration:1,delay:0.4});
+
+gsap.from(".contact-card",{
+  opacity:0,
+  y:60,
+  stagger:0.15,
+  duration:1,
+  delay:0.6
+});
