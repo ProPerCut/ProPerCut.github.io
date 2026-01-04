@@ -46,9 +46,6 @@ function spark(x, y) {
     s.className = "spark";
     document.body.appendChild(s);
 
-    s.style.left = x + "px";
-    s.style.top = y + "px";
-
     s.animate([
       { transform: "scale(1)", opacity: 1 },
       { transform: `translate(${Math.random()*100-50}px, ${Math.random()*100-50}px) scale(0)`, opacity: 0 }
@@ -65,8 +62,7 @@ hoverText.forEach(el => {
   el.addEventListener("mouseenter", () => {
     cursor.style.color = "#ff00ff";
     cursor.style.fontSize = "36px";
-    // optional: hover sound
-    // scrollSound.play();
+    // small drag animation
     gsap.to(el, { x: 10, duration: 0.3, yoyo: true, repeat: 1 });
   });
 
