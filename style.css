@@ -411,3 +411,36 @@ nav a{
 #cursor:hover{
   filter: drop-shadow(0 0 15px #00ffff);
 }
+/* ===== CUSTOM CURSOR ===== */
+body {
+  cursor: none;
+}
+
+#cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%) rotate(-135deg);
+  font-size: 28px;
+  color: #00ffff;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s ease;
+}
+
+/* SCISSOR CLOSE */
+#cursor.cut {
+  transform: translate(-50%, -50%) rotate(-90deg) scale(0.85);
+}
+
+/* SPARK */
+.spark {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: #00ffff;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #00ffff;
+  pointer-events: none;
+  z-index: 9998;
+}
