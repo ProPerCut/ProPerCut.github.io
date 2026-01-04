@@ -155,7 +155,7 @@ nav a{
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: rotate(8deg);  /* counter rotate image inside tilted frame */
+  transform: rotate(0deg);  /* counter rotate image inside tilted frame */
 }
 
 /* Float animation for the entire frame */
