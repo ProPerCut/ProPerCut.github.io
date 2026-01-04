@@ -1,3 +1,4 @@
+/* ================= GLOBAL SETTINGS ================= */
 *{
   margin:0;
   padding:0;
@@ -9,7 +10,7 @@ body{
   color:#fff;
   font-family:Poppins,sans-serif;
   cursor:none;
-  overflow-x:hidden; /* বডি স্ক্রল যাতে না হয় */
+  overflow-x:hidden; /* side scroll stop */
 }
 
 /* CURSOR */
@@ -23,38 +24,39 @@ body{
   text-shadow:0 0 20px #00ffff;
 }
 
-/* HEADER - Scaled for 100% Zoom */
+/* HEADER - 175% Zoom equivalent */
 header{
   position:absolute;
   width:100%;
-  padding:50px 8%; /* 30px -> 50px */
+  padding:50px 8%; 
   display:flex;
   justify-content:space-between;
+  align-items: center;
   z-index:50;
 }
 
 .logo{
   font-family:Orbitron;
-  font-size:38px; /* 26px -> 38px */
+  font-size:38px; 
 }
 .logo span{color:#00ffff;}
 
 nav a{
   color:#aaa;
   text-decoration:none;
-  margin-left:45px; /* 30px -> 45px */
-  font-size:18px; /* 14px -> 18px */
+  margin-left:45px;
+  font-size:18px; 
 }
 .nav-btn{
-  padding:15px 35px; /* 10px 22px -> 15px 35px */
+  padding:15px 35px;
   border:1px solid #00ffff;
   border-radius:30px;
 }
 
-/* HERO - Adjusted to 1.75x Scale */
+/* ================= HERO SECTION (Home Page) ================= */
 .hero {
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -66,63 +68,35 @@ nav a{
   position: absolute;
   bottom: 0;
   right: 10%;
-  height: 85%;
+  height: 90%;
   opacity: 0.15;
   z-index: 1;
   pointer-events: none;
 }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  color: white;
-}
-
-.hero h1 {
-  font-size: 5.5rem; /* 3.5rem -> 5.5rem */
-  position: relative;
-}
-
-.hero h1::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -10px;
-  width: 100%;
-  height: 4px; /* 3px -> 4px */
-  background: linear-gradient(90deg, #ff3c00, #ffb800);
-  animation: underline 2s infinite alternate;
-}
-
-@keyframes underline {
-  from { transform: scaleX(0.4); }
-  to   { transform: scaleX(1); }
-}
-
 .hero-bg-glow{
   position:absolute;
-  width:800px; /* 600px -> 800px */
-  height:800px;
+  width:850px; 
+  height:850px;
   background:radial-gradient(circle,#00ffff33,transparent 70%);
   filter:blur(150px);
 }
 
 .hero-wrap{
-  width:90%; /* 85% -> 90% */
+  width:90%;
   display:flex;
   align-items:center;
   justify-content:space-between;
   z-index:2;
 }
 
-/* HERO IMAGE - Oval Scaled Up */
+/* HERO IMAGE - Scaled up for 100% zoom */
 .hero-img {
-  width: 550px;      /* 420px -> 550px */
-  height: 650px;     /* 500px -> 650px */
+  width: 550px;      
+  height: 650px;     
   border-radius: 50% / 40%;
   overflow: hidden;
-  border: 6px solid #00ffff; /* 4px -> 6px */
+  border: 6px solid #00ffff;
   box-shadow: 0 0 80px rgba(0,255,255,0.6);
 }
 
@@ -133,143 +107,141 @@ nav a{
   animation: float 6s ease-in-out infinite;
 }
 
-/* HERO TEXT Scaled Up */
+/* HERO TEXT - Scaled up for 175% look */
 .hero-text{
-  max-width:650px; /* 480px -> 650px */
+  max-width:650px;
 }
 
 .hero-text h4{
   color:#00ffff;
   letter-spacing:5px;
-  font-size:20px; /* 13px -> 20px */
+  font-size:18px;
 }
 
 .hero-text h1{
   font-family:Orbitron;
-  font-size:7rem; /* 4.5rem -> 7rem */
+  font-size:6.5rem; 
   margin:20px 0;
+  line-height: 1.1;
 }
 .hero-text h1 span{
   color:transparent;
-  -webkit-text-stroke:2px #fff; /* 1px -> 2px */
+  -webkit-text-stroke:2px #fff;
 }
 
 .hero-text p{
   color:#aaa;
   line-height:1.8;
-  font-size:1.3rem; /* New size added */
+  font-size: 1.25rem;
   margin-bottom:40px;
 }
 
 .btn{
   display:inline-block;
-  padding:18px 45px; /* 14px 36px -> 18px 45px */
+  padding:18px 45px;
   background:#00ffff;
   color:#000;
   text-decoration:none;
   font-weight:700;
-  border-radius:4px;
-  font-size: 1.1rem;
+  border-radius:6px;
 }
 
-/* ================= PORTFOLIO PAGE (1.5x Scaled) ================= */
-
+/* ================= PORTFOLIO PAGE (150% Scale) ================= */
 .portfolio{
   min-height:100vh;
-  padding:180px 8% 100px; /* 140px -> 180px */
+  padding:180px 8% 100px;
 }
 
 .page-title{
   font-family:Orbitron;
-  font-size:4.5rem; /* 3rem -> 4.5rem */
+  font-size:4.5rem;
   margin-bottom:60px;
 }
 
 .portfolio-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(350px,1fr)); /* 260px -> 350px */
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
   gap:40px;
 }
 
-.video-thumb{
-  height:240px; /* 160px -> 240px */
+.portfolio-card{
+  background:#0b0f1a;
+  padding:30px;
+  border-radius:18px;
 }
 
-/* ================= ABOUT PAGE (1.5x Scaled) ================= */
+.video-thumb{
+  height:220px;
+}
 
+/* ================= ABOUT PAGE (150% Scale) ================= */
 .about{
   min-height:100vh;
   padding:180px 10%;
   display:grid;
   grid-template-columns:1.2fr 1fr;
-  gap:80px; /* 60px -> 80px */
+  gap:80px;
   align-items:center;
 }
 
 .about-name{
-  font-size:5rem; /* 3.5rem -> 5rem */
+  font-family:Orbitron;
+  font-size:5rem;
+  margin:20px 0;
 }
 
 .about-desc{
-  font-size:1.5rem; /* 1.1rem -> 1.5rem */
+  font-size:1.4rem;
+  line-height:1.9;
 }
 
 .stat h2{
-  font-size:3.5rem; /* 2.4rem -> 3.5rem */
+  font-size:3.5rem;
+  color:#00ffff;
 }
 
-/* ================= SERVICE PAGE (1.5x Scaled) ================= */
+.skills-box{
+  padding:50px;
+  border-radius:24px;
+}
 
+/* ================= SERVICE PAGE (150% Scale) ================= */
 .services{
   min-height:100vh;
   padding:180px 10%;
 }
 
 .section-head h1{
-  font-size:4.5rem; /* 3rem -> 4.5rem */
+  font-size:4.5rem;
 }
 
 .service-card{
-  padding:60px 40px; /* 40x30 -> 60x40 */
+  padding:60px 40px;
+  border-radius:25px;
 }
 
 .service-card i{
-  font-size:60px; /* 40px -> 60px */
+  font-size:60px;
 }
 
 .service-card h3{
-  font-size:2rem; /* 1.4rem -> 2rem */
+  font-size:2rem;
 }
 
-/* ================= CONTACT PAGE (1.5x Scaled) ================= */
-
+/* ================= CONTACT PAGE (150% Scale) ================= */
 .contact-box h1{
-  font-size:4.8rem; /* 3.2rem -> 4.8rem */
+  font-size:5rem;
 }
 
 .contact-card{
-  padding:60px 30px; /* 40x20 -> 60x30 */
+  padding:60px 30px;
 }
 
-/* ANIMATIONS (Keep Same) */
+/* ================= ANIMATIONS & CURSOR ================= */
 @keyframes float{
   0%{transform:translateY(0)}
   50%{transform:translateY(-20px)}
   100%{transform:translateY(0)}
-}
-
-/* CUSTOM CURSOR (Keep Same) */
-#cursor {
-  position: fixed;
-  left: 0;
-  top: 0;
-  transform: translate(-50%, -50%) rotate(-135deg);
-  font-size: 28px;
-  color: #00ffff;
-  pointer-events: none;
-  z-index: 9999;
-  transition: transform 0.1s ease;
-  text-shadow: 0 0 20px #00ffff;
 }
 
 #cursor.cut {
@@ -291,10 +263,10 @@ nav a{
 @media screen and (max-width: 1024px){
   .hero-wrap{
     flex-direction: column;
-    gap: 50px;
     text-align: center;
-    padding-top: 80px;
+    gap: 50px;
+    padding-top: 100px;
   }
-  .hero-img { width: 320px; height: 380px; }
-  .hero-text h1 { font-size: 4rem; }
+  .hero-img { width: 300px; height: 350px; }
+  .hero-text h1 { font-size: 3.5rem; }
 }
