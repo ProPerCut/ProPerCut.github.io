@@ -1,108 +1,67 @@
-const cursor = document.querySelector('#cursor');
+const cursor = document.getElementById("cursor");
 
 // ===== SOUNDS =====
-const cutSound = new Audio('./assets/sound/cut.mp3');
-const rightSound = new Audio('./assets/sound/right.mp3');
-const scrollSound = new Audio('./assets/sound/scroll.mp3');
+const cutSound = new Audio("assets/sound/cut.mp3");
+const rightSound = new Audio("assets/sound/right.mp3");
+const scrollSound = new Audio("assets/sound/scroll.mp3");
 
 cutSound.volume = 0.6;
 rightSound.volume = 0.6;
 scrollSound.volume = 0.3;
 
-// ===== MOUSE MOVE =====
-document.addEventListener('mousemove', e => {
-  gsap.to(cursor, {
-    x: e.clientX,
-    y: e.clientY,
-    duration: 0
-  });
+// ===== FOLLOW MOUSE =====
+document.addEventListener("mousemove", e => {
+  cursor.style.left = e.clientX + "px";
+  cursor.style.top = e.clientY + "px";
 });
 
-// ===== LEFT CLICK (CUT) =====
-document.addEventListener('mousedown', e => {
+// ===== LEFT CLICK (SCISSOR CLOSE) =====
+document.addEventListener("mousedown", e => {
   if (e.button === 0) {
     cutSound.currentTime = 0;
     cutSound.play();
 
-    gsap.to(cursor, {
-      rotate: -90,
-      scale: 0.8,
-      duration: 0.08
-    });
-
-    createSpark(e.clientX, e.clientY);
+    cursor.classList.add("cut");
+    spark(e.clientX, e.clientY);
   }
 });
 
-// ===== RELEASE =====
-document.addEventListener('mouseup', () => {
-  gsap.to(cursor, {
-    rotate: -135,
-    scale: 1,
-    duration: 0.1
-  });
+// ===== RELEASE (SCISSOR OPEN) =====
+document.addEventListener("mouseup", () => {
+  cursor.classList.remove("cut");
 });
 
 // ===== RIGHT CLICK =====
-document.addEventListener('contextmenu', e => {
+document.addEventListener("contextmenu", e => {
   e.preventDefault();
   rightSound.currentTime = 0;
   rightSound.play();
-
-  gsap.to(cursor, {
-    scale: 1.4,
-    color: '#ff00ff',
-    duration: 0.2
-  });
-
-  setTimeout(() => {
-    gsap.to(cursor, {
-      scale: 1,
-      color: '#00ffff',
-      duration: 0.2
-    });
-  }, 200);
 });
 
-// ===== SCROLL SOUND =====
-let scrollTimeout;
-window.addEventListener('wheel', () => {
+// ===== SCROLL =====
+window.addEventListener("wheel", () => {
   scrollSound.currentTime = 0;
   scrollSound.play();
-
-  clearTimeout(scrollTimeout);
-  scrollTimeout = setTimeout(() => {
-    scrollSound.pause();
-  }, 120);
-});
-
-// ===== HOVER MAGNETIC =====
-document.querySelectorAll('a, button, .nav-btn').forEach(el => {
-  el.addEventListener('mouseenter', () => {
-    gsap.to(cursor, { scale: 1.6, duration: 0.2 });
-  });
-  el.addEventListener('mouseleave', () => {
-    gsap.to(cursor, { scale: 1, duration: 0.2 });
-  });
 });
 
 // ===== SPARK EFFECT =====
-function createSpark(x, y) {
-  for (let i = 0; i < 6; i++) {
-    const spark = document.createElement('div');
-    spark.className = 'spark';
-    document.body.appendChild(spark);
+function spark(x, y) {
+  for (let i = 0; i < 5; i++) {
+    const s = document.createElement("div");
+    s.className = "spark";
+    document.body.appendChild(s);
 
-    spark.style.left = x + 'px';
-    spark.style.top = y + 'px';
+    s.style.left = x + "px";
+    s.style.top = y + "px";
 
-    gsap.to(spark, {
-      x: (Math.random() - 0.5) * 120,
-      y: (Math.random() - 0.5) * 120,
-      opacity: 0,
-      scale: 0,
-      duration: 0.6,
-      onComplete: () => spark.remove()
-    });
+    s.animate([
+      { transform: "scale(1)", opacity: 1 },
+      {
+        transform: `translate(${Math.random()*100-50}px, ${Math.random()*100-50}px) scale(0)`,
+        opacity: 0
+      }
+    ], { duration: 500 });
+
+    setTimeout(() => s.remove(), 500);
   }
 }
