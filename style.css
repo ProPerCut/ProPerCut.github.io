@@ -273,3 +273,69 @@ nav a{
   color:#ddd;
   font-size:15px;
 }
+/* ================= SERVICE PAGE ================= */
+
+.services{
+  min-height:100vh;
+  padding:140px 10%;
+}
+
+.section-head{
+  text-align:center;
+  margin-bottom:80px;
+}
+
+.section-head h4{
+  color:#00ffff;
+  letter-spacing:4px;
+  font-size:14px;
+}
+
+.section-head h1{
+  font-size:3rem;
+  margin:15px 0;
+}
+
+.section-head p{
+  color:#aaa;
+  max-width:600px;
+  margin:auto;
+}
+
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:40px;
+}
+
+.service-card{
+  background:#0b0f1a;
+  padding:40px 30px;
+  border-radius:20px;
+  text-align:center;
+  transition:0.4s ease;
+  box-shadow:0 0 40px rgba(0,255,255,0.08);
+  cursor:pointer;
+}
+
+.service-card i{
+  font-size:40px;
+  color:#00ffff;
+  margin-bottom:20px;
+}
+
+.service-card h3{
+  font-size:1.4rem;
+  margin-bottom:15px;
+}
+
+.service-card p{
+  color:#aaa;
+  font-size:15px;
+  line-height:1.6;
+}
+
+.service-card:hover{
+  transform:translateY(-15px) scale(1.02);
+  box-shadow:0 0 80px rgba(0,255,255,0.35);
+}
