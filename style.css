@@ -76,11 +76,21 @@ nav a{
   z-index:2;
 }
 
-.hero-img img{
-  width:480px;              /* image বড় */
-  border-radius:30px;
-  box-shadow:0 0 80px rgba(0,255,255,0.6);
-  animation: imgIn 1.5s ease forwards;
+/* HERO IMAGE - Oval Template */
+.hero-img {
+  width: 420px;      /* Width of the oval */
+  height: 500px;     /* Height larger than width for oval shape */
+  border-radius: 50% / 40%; /* Oval shape */
+  overflow: hidden;          /* Keep image inside oval */
+  border: 4px solid #00ffff; /* Neon border */
+  box-shadow: 0 0 60px rgba(0,255,255,0.6); /* Glow effect */
+}
+
+.hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* Fill oval without distortion */
+  animation: float 6s ease-in-out infinite; /* Floating animation */
 }
 
 /* FLOAT ANIMATION */
@@ -466,67 +476,5 @@ body {
 
   .hero-text h1{
     font-size: 3rem;
-  }
-}
-/* ===== HERO PC DESIGN ===== */
-
-.hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 12%;
-}
-
-.hero-img img{
-  width:480px;              /* image বড় */
-  border-radius:30px;
-  box-shadow:0 0 80px rgba(0,255,255,0.6);
-  animation: imgIn 1.5s ease forwards;
-}
-
-.hero-text{
-  max-width:500px;
-  animation: textIn 1.5s ease forwards;
-}
-
-.brand{
-  color:#00ffff;
-  letter-spacing:4px;
-  font-size:15px;
-}
-
-.name{
-  font-size:4.2rem;         /* নাম বড় */
-  margin:15px 0;
-}
-
-.services{
-  font-size:1.2rem;
-  color:#aaa;
-  line-height:1.9;
-}
-
-/* ===== ANIMATION ===== */
-
-@keyframes imgIn{
-  from{
-    opacity:0;
-    transform:translateX(-80px);
-  }
-  to{
-    opacity:1;
-    transform:translateX(0);
-  }
-}
-
-@keyframes textIn{
-  from{
-    opacity:0;
-    transform:translateX(80px);
-  }
-  to{
-    opacity:1;
-    transform:translateX(0);
   }
 }
