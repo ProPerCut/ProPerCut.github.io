@@ -1,72 +1,70 @@
 const cursor = document.querySelector('#cursor');
-// একটি মেটাল কাটিং সাউন্ড লিংক (এটি ট্রাই করে দেখুন)
-const cutSound = new Audio('https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3');
 
-// ১. মাউস মুভমেন্ট
+// Audio setup
+const leftClickSound = new Audio('https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3'); // Scissor cut
+const rightClickSound = new Audio('https://www.soundjay.com/buttons/sounds/button-16.mp3'); // Metal clang
+const scrollSound = new Audio('https://www.soundjay.com/mechanical/sounds/mechanical-clutter-1.mp3'); // Scraping
+
+// 1. Instant Mouse Follow
 document.addEventListener('mousemove', (e) => {
-    gsap.to(cursor, {
-        x: e.clientX,
-        y: e.clientY,
-        duration: 0,
-    });
+    gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0 });
 });
 
-// ২. স্পার্ক (লাইট) তৈরির ফাংশন
-function createSpark(x, y) {
-    for (let i = 0; i < 5; i++) {
+// 2. Spark Effect
+function createSpark(x, y, color = "#00ffff") {
+    for (let i = 0; i < 8; i++) {
         const spark = document.createElement('div');
         spark.className = 'spark';
+        spark.style.background = color;
         document.body.appendChild(spark);
-        
-        // মাউসের জায়গায় স্পার্ক সেট করা
         spark.style.left = x + 'px';
         spark.style.top = y + 'px';
-        
-        // স্পার্ক চারদিকে ছড়িয়ে পড়ার এনিমেশন
         gsap.to(spark, {
-            x: (Math.random() - 0.5) * 100,
-            y: (Math.random() - 0.5) * 100,
-            opacity: 0,
-            scale: 0,
-            duration: 0.5,
-            onComplete: () => spark.remove()
+            x: (Math.random() - 0.5) * 150, y: (Math.random() - 0.5) * 150,
+            opacity: 0, scale: 0, duration: 0.7, onComplete: () => spark.remove()
         });
     }
 }
 
-// ৩. ক্লিক এনিমেশন, সাউন্ড এবং লাইট
+// 3. Click Interactions
 document.addEventListener('mousedown', (e) => {
-    cutSound.play(); // সাউন্ড বাজবে
-    createSpark(e.clientX, e.clientY); // স্পার্ক তৈরি হবে
-    
-    gsap.to(cursor, { 
-        scale: 0.7, 
-        rotate: -90, // কাটার সময় সোজা হবে
-        duration: 0.05 
-    });
+    if (e.button === 0) { // Left Click
+        leftClickSound.play();
+        createSpark(e.clientX, e.clientY, "#00ffff");
+    } else if (e.button === 2) { // Right Click
+        rightClickSound.play();
+        createSpark(e.clientX, e.clientY, "#ff00ff");
+    }
+    gsap.to(cursor, { scale: 0.6, rotate: -90, duration: 0.05 });
 });
 
 document.addEventListener('mouseup', () => {
-    gsap.to(cursor, { 
-        scale: 1, 
-        rotate: -135, // আবার বাম দিকে ফিরে যাবে
-        duration: 0.05 
-    });
+    gsap.to(cursor, { scale: 1, rotate: -135, duration: 0.05 });
 });
 
-// ৪. লিঙ্ক হোভার ইফেক্ট
-const links = document.querySelectorAll('a, button, .nav-btn');
-links.forEach(link => {
-    link.addEventListener('mouseenter', () => {
-        gsap.to(cursor, { scale: 1.5, color: '#ff00ff', duration: 0.2 });
+// 4. Scroll Sound
+window.addEventListener('wheel', () => {
+    if(scrollSound.paused) {
+        scrollSound.volume = 0.2;
+        scrollSound.play();
+    }
+});
+
+// 5. Magnetic Effect & Hover
+const magLinks = document.querySelectorAll('.mag-link');
+magLinks.forEach(link => {
+    link.addEventListener('mousemove', (e) => {
+        const rect = link.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        gsap.to(link, { x: x * 0.4, y: y * 0.4, duration: 0.3 });
+        gsap.to(cursor, { scale: 1.5, color: '#ff00ff' });
     });
     link.addEventListener('mouseleave', () => {
-        gsap.to(cursor, { scale: 1, color: '#00ffff', duration: 0.2 });
+        gsap.to(link, { x: 0, y: 0, duration: 0.3 });
+        gsap.to(cursor, { scale: 1, color: '#00ffff' });
     });
 });
 
-// ৫. এন্ট্রান্স এনিমেশন
-const tl = gsap.timeline();
-tl.from(".logo, nav a", { y: -50, opacity: 0, duration: 0.8, stagger: 0.1 });
-tl.from(".hero-left", { x: -100, opacity: 0, duration: 1 }, "-=0.4");
-tl.from(".hero-right > *", { x: 100, opacity: 0, duration: 0.8, stagger: 0.2 }, "-=0.8");
+// Disable Right Click Menu to allow custom sound
+document.addEventListener('contextmenu', e => e.preventDefault());
