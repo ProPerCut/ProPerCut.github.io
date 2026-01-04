@@ -76,25 +76,11 @@ nav a{
   z-index:2;
 }
 
-.brand{
-  letter-spacing:3px;
-  color:#00ffff;
-  font-size:14px;
-}
-
-.hero{
-  padding:0 10%;
-}
-
-.hero-text h1{
-  font-size:3.5rem;
-  margin:10px 0;
-}
-
 .hero-img img{
-  width:400px;
-  border-radius:25px;
-  box-shadow:0 0 70px rgba(0,255,255,0.6);
+  width:480px;              /* image বড় */
+  border-radius:30px;
+  box-shadow:0 0 80px rgba(0,255,255,0.6);
+  animation: imgIn 1.5s ease forwards;
 }
 
 /* FLOAT ANIMATION */
