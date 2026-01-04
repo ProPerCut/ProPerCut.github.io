@@ -8,11 +8,32 @@
 body {
     background: #080808;
     color: #fff;
-    overflow: hidden; /* স্ক্রল বন্ধ */
+    overflow: hidden;
     height: 100vh;
+    cursor: none !important; /* Asol mouse hide */
 }
 
-/* Header Design */
+a, button {
+    cursor: none !important; /* Button-er uporeo mouse hide thakbe */
+}
+
+/* Scissor Cursor Style */
+#cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 10000;
+    color: #00ffff;
+    font-size: 28px;
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+    transform: translate(-50%, -50%) rotate(-45deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Header */
 header {
     position: absolute;
     top: 0;
@@ -33,11 +54,8 @@ nav a {
     margin-left: 35px;
     font-size: 14px;
     font-weight: 500;
-    transition: 0.3s;
     opacity: 0.7;
 }
-
-nav a:hover { opacity: 1; color: #00ffff; }
 
 .nav-btn {
     padding: 10px 25px;
@@ -45,13 +63,12 @@ nav a:hover { opacity: 1; color: #00ffff; }
     border-radius: 50px;
 }
 
-/* Hero Section Setup */
+/* Hero Section */
 .hero {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: radial-gradient(circle at 10% 20%, rgba(0, 255, 255, 0.05) 0%, transparent 50%);
 }
 
 .container {
@@ -61,17 +78,10 @@ nav a:hover { opacity: 1; color: #00ffff; }
     justify-content: space-between;
 }
 
-/* Glowing Image Box */
-.hero-left {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
 .image-border-box {
     position: relative;
-    width: 380px;
-    height: 450px;
+    width: 350px;
+    height: 420px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 30px;
     display: flex;
@@ -91,8 +101,7 @@ nav a:hover { opacity: 1; color: #00ffff; }
 
 .image-border-box::after {
     content: '';
-    position: absolute;
-    inset: 4px;
+    position: absolute;    inset: 4px;
     background: #080808;
     border-radius: 26px;
 }
@@ -106,28 +115,18 @@ nav a:hover { opacity: 1; color: #00ffff; }
     overflow: hidden;
 }
 
-.image-inner img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+.image-inner img { width: 100%; height: 100%; object-fit: cover; }
 
 @keyframes rotateBox {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
 
-/* Text Section */
-.hero-right {
-    flex: 1;
-    padding-left: 50px;
-}
-
+.hero-right { flex: 1; padding-left: 60px; }
 .brand-sub { color: #00ffff; letter-spacing: 4px; font-size: 13px; margin-bottom: 10px; }
-.main-title { font-size: 4.5rem; line-height: 1.1; font-weight: 800; }
+.main-title { font-size: 4rem; line-height: 1.1; font-weight: 800; }
 .main-title span { color: transparent; -webkit-text-stroke: 1px #fff; }
-
-.description { color: #aaa; margin: 25px 0; max-width: 450px; line-height: 1.6; }
+.description { color: #aaa; margin: 25px 0; max-width: 450px; }
 
 .btn-primary {
     padding: 15px 40px;
@@ -137,19 +136,4 @@ nav a:hover { opacity: 1; color: #00ffff; }
     font-weight: 700;
     border-radius: 4px;
     display: inline-block;
-    transition: 0.3s;
-}
-
-.btn-primary:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0, 255, 255, 0.4); }
-
-/* Mouse Circle */
-#cursor {
-    width: 15px;
-    height: 15px;
-    background: #00ffff;
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 999;
-    box-shadow: 0 0 20px #00ffff;
 }
