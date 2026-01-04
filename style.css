@@ -76,10 +76,10 @@ nav a{
   z-index:2;
 }
 
-.hero-img img {
-  width: 300px;
-  border-radius: 50%;
-  box-shadow: 0 0 40px rgba(0,255,255,0.3);
+.hero-img img{
+  width:280px;
+  border-radius:50%;
+  box-shadow:0 0 40px rgba(0,255,255,0.4);
 }
 
 .hero-img img {
