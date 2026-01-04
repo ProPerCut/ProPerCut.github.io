@@ -76,17 +76,25 @@ nav a{
   z-index:2;
 }
 
-.hero-img img{
-  width:280px;
-  border-radius:50%;
-  box-shadow:0 0 40px rgba(0,255,255,0.4);
+.brand{
+  letter-spacing:3px;
+  color:#00ffff;
+  font-size:14px;
 }
 
-.hero-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;  /* Fill oval without distortion */
-  animation: float 6s ease-in-out infinite; /* Floating animation */
+.hero{
+  padding:0 10%;
+}
+
+.hero-text h1{
+  font-size:3.5rem;
+  margin:10px 0;
+}
+
+.hero-img img{
+  width:380px;
+  border-radius:20px;
+  box-shadow:0 0 60px rgba(0,255,255,0.5);
 }
 
 /* FLOAT ANIMATION */
