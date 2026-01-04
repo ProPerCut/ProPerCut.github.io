@@ -135,7 +135,36 @@ nav a{
   text-decoration:none;
   font-weight:700;
   border-radius:4px;
+}/* ================= HERO IMAGE OVAL ANIMATION ================= */
+.hero-img {
+  width: 420px;        /* আগের image size */
+  height: 520px;       /* adjust height to make oval */
+  border: 4px solid #00ffff;  /* dimbo border */
+  border-radius: 50% / 45%;    /* oval shape */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transform: rotate(-8deg);   /* tilted angle */
+  animation: float-frame 6s ease-in-out infinite;  /* oval frame floating */
+  box-shadow: 0 0 60px rgba(0,255,255,0.6);
 }
+
+/* Image inside frame */
+.hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: rotate(8deg);  /* counter rotate image inside tilted frame */
+}
+
+/* Float animation for the entire frame */
+@keyframes float-frame {
+  0% { transform: rotate(-8deg) translateY(0); }
+  50% { transform: rotate(-8deg) translateY(-20px); }
+  100% { transform: rotate(-8deg) translateY(0); }
+}
+
 
 /* ================= PORTFOLIO PAGE ================= */
 
