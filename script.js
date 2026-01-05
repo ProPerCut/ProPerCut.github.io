@@ -1,34 +1,35 @@
 const cursor = document.getElementById("cursor");
-const cutSound = document.getElementById("cutSound");
+const cutSound = new Audio("assets/sound/cut.mp3");
+const rightSound = new Audio("assets/sound/right.mp3");
+const scrollSound = new Audio("assets/sound/scroll.mp3");
 
-// FOLLOW MOUSE
-document.addEventListener("mousemove", e => {
+// Cursor follow mouse
+document.addEventListener("mousemove", e=>{
   cursor.style.left = e.clientX + "px";
   cursor.style.top = e.clientY + "px";
 });
 
-// CLICK EFFECT
-document.addEventListener("mousedown", () => {
-  cursor.classList.add("cut");
-  cutSound.currentTime = 0;
-  cutSound.play();
+// Left click = cut sound
+document.addEventListener("mousedown", e=>{
+  if(e.button===0){
+    cutSound.currentTime=0;
+    cutSound.play();
+    cursor.classList.add("cut");
+  }
 });
-
-document.addEventListener("mouseup", () => {
+document.addEventListener("mouseup", ()=>{
   cursor.classList.remove("cut");
 });
 
-// MENU HOVER EFFECT
-const menuLinks = document.querySelectorAll(".menu-link");
+// Right click
+document.addEventListener("contextmenu", e=>{
+  e.preventDefault();
+  rightSound.currentTime=0;
+  rightSound.play();
+});
 
-menuLinks.forEach(link => {
-  link.addEventListener("mouseenter", () => {
-    cursor.style.transform = "translate(-50%, -50%) scale(1.5)";
-    cursor.style.color = "#ff3c00";
-  });
-
-  link.addEventListener("mouseleave", () => {
-    cursor.style.transform = "translate(-50%, -50%) rotate(-135deg)";
-    cursor.style.color = "#00ffff";
-  });
+// Scroll sound
+window.addEventListener("wheel", ()=>{
+  scrollSound.currentTime=0;
+  scrollSound.play();
 });
