@@ -3,14 +3,80 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Start Project — ProperCut</title>
+<title>Start a Project — ProperCut</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 
 <body>
-<section class="contact">
-  <h1>Start a Project</h1>
-  <p>High-budget, serious collaborations only.</p>
+
+<header>
+  <div class="logo">Proper<span>Cut</span></div>
+</header>
+
+<section class="contact-hero">
+  <h4>PROJECT INTAKE</h4>
+  <h1>Let’s See If<br><span>We’re a Fit</span></h1>
+  <p>
+    I work with creators & brands who care about retention, quality and results.  
+    This short intake filters projects I can genuinely elevate.
+  </p>
 </section>
+
+<form class="intake-form">
+
+  <div class="form-step">
+    <label>Your Name</label>
+    <input type="text" placeholder="John Doe" required>
+  </div>
+
+  <div class="form-step">
+    <label>Email Address</label>
+    <input type="email" placeholder="you@brand.com" required>
+  </div>
+
+  <div class="form-step">
+    <label>Project Type</label>
+    <select required>
+      <option value="">Select one</option>
+      <option>YouTube Long Form</option>
+      <option>YouTube Automation</option>
+      <option>Short Form / Reels</option>
+      <option>Documentary</option>
+      <option>Other</option>
+    </select>
+  </div>
+
+  <div class="form-step">
+    <label>Monthly Editing Budget</label>
+    <select required>
+      <option value="">Select range</option>
+      <option>$500 – $1,000</option>
+      <option>$1,000 – $3,000</option>
+      <option>$3,000 – $5,000</option>
+      <option>$5,000+</option>
+    </select>
+  </div>
+
+  <div class="form-step">
+    <label>What’s the main goal?</label>
+    <textarea placeholder="Retention, growth, monetization, brand authority…" required></textarea>
+  </div>
+
+  <button type="submit" class="btn">Submit Request</button>
+
+</form>
+
+<section class="contact-note">
+  <p>
+    If your project aligns, you’ll receive a response within 48 hours.  
+    If not — this page already saved us both time.
+  </p>
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>
