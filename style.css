@@ -391,3 +391,62 @@ nav a{
     padding:30px 6% 80px;
   }
 }
+/* ================= FINAL POLISH ================= */
+
+/* CUSTOM CURSOR */
+#cursor{
+  position:fixed;
+  top:0;
+  left:0;
+  width:38px;
+  height:38px;
+  border:1px solid rgba(0,255,255,.6);
+  border-radius:50%;
+  pointer-events:none;
+  transform:translate(-50%,-50%);
+  z-index:9999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:12px;
+  color:#00ffff;
+  backdrop-filter:blur(4px);
+  transition:
+    width .25s ease,
+    height .25s ease,
+    background .25s ease,
+    transform .15s ease;
+}
+
+/* HOVER STATES */
+a:hover ~ #cursor,
+button:hover ~ #cursor{
+  width:60px;
+  height:60px;
+  background:rgba(0,255,255,.08);
+}
+
+/* BUTTON MICRO INTERACTION */
+.btn{
+  display:inline-block;
+  padding:14px 36px;
+  border-radius:40px;
+  background:#00ffff;
+  color:#000;
+  font-weight:600;
+  transition:.25s ease;
+}
+.btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 15px 40px rgba(0,255,255,.4);
+}
+
+/* GLOBAL SMOOTHNESS */
+*{
+  -webkit-tap-highlight-color:transparent;
+}
+
+/* MOBILE CURSOR OFF */
+@media(max-width:768px){
+  #cursor{display:none;}
+}
