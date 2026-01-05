@@ -1,1 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ProperCut | Admin Panel</title>
+    <style>
+        body { background: #050505; color: white; font-family: sans-serif; padding: 50px; }
+        h1 { border-bottom: 2px solid #fff; padding-bottom: 10px; }
+        .submission { background: #111; padding: 20px; margin-bottom: 10px; border-radius: 5px; border-left: 5px solid #fff; }
+        .no-data { color: #555; }
+    </style>
+</head>
+<body>
+    <h1>Client Submissions</h1>
+    <div id="display-area"></div>
 
+    <script>
+        const displayArea = document.getElementById('display-area');
+        const data = JSON.parse(localStorage.getItem('formSubmissions') || '[]');
+
+        if(data.length === 0) {
+            displayArea.innerHTML = '<p class="no-data">এখনো কোনো ক্লায়েন্ট সাবমিট করেনি।</p>';
+        } else {
+            data.reverse().forEach(item => {
+                displayArea.innerHTML += `
+                    <div class="submission">
+                        <p><strong>Name:</strong> ${item.name}</p>
+                        <p><strong>Email:</strong> ${item.email}</p>
+                        <p><strong>Project:</strong> ${item.project_type}</p>
+                        <p><strong>Budget:</strong> $${item.budget}</p>
+                    </div>
+                `;
+            });
+        }
+    </script>
+</body>
+</html>
