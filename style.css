@@ -215,3 +215,95 @@ nav a{
   .case-media{height:180px}
   .case-content{padding:24px}
 }
+/* ================= PROCESS / THE CRAFT ================= */
+
+.process-hero{
+  min-height:100vh;
+  padding:180px 10% 120px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.process-hero h4{
+  color:#00ffff;
+  letter-spacing:4px;
+  font-size:13px;
+  margin-bottom:18px;
+}
+.process-hero h1{
+  font-family:Orbitron;
+  font-size:3.8rem;
+  line-height:1.1;
+  margin-bottom:24px;
+}
+.process-hero h1 span{
+  color:transparent;
+  -webkit-text-stroke:1px #fff;
+}
+.process-hero p{
+  color:#aaa;
+  max-width:520px;
+  line-height:1.8;
+}
+
+/* STEPS */
+.process-steps{
+  padding:120px 10%;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:60px;
+}
+
+.process-step{
+  background:#0b0f1a;
+  padding:40px 36px;
+  border-radius:26px;
+  box-shadow:0 0 50px rgba(0,255,255,.08);
+}
+
+.step-number{
+  display:block;
+  font-family:Orbitron;
+  font-size:2.4rem;
+  color:#00ffff;
+  margin-bottom:14px;
+}
+
+.process-step h3{
+  font-size:1.4rem;
+  margin-bottom:14px;
+}
+
+.process-step p{
+  color:#aaa;
+  font-size:15px;
+  line-height:1.7;
+}
+
+/* END CTA */
+.process-end{
+  padding:140px 10%;
+  text-align:center;
+}
+.process-end h2{
+  font-size:2.6rem;
+  margin-bottom:18px;
+}
+.process-end p{
+  color:#aaa;
+  margin-bottom:36px;
+}
+
+/* MOBILE UX */
+@media(max-width:768px){
+  .process-hero{
+    padding:140px 6% 80px;
+  }
+  .process-hero h1{
+    font-size:2.4rem;
+  }
+  .process-steps{
+    padding:80px 6%;
+    gap:36px;
+  }
+}
