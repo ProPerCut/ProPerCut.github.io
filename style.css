@@ -80,3 +80,85 @@ form button { padding: 15px; background: #fff; color: #000; font-weight: bold; b
 form button:hover { background: #ff3c3c; color: #fff; }
 
 @media (max-width: 768px) { #cursor { display: none; } * { cursor: auto !important; } .hero-image { width: 100%; opacity: 0.5; } }
+/* আগের সব CSS ঠিক থাকবে, শুধু নিচের অংশটুকু পরিবর্তন/যোগ করুন */
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: row; /* পাশাপাশি দেখাবে */
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    background: #050505;
+}
+
+/* ছবি বামে */
+.hero-image-left {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.profile-img {
+    height: 90%;
+    max-width: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 30px rgba(255, 60, 60, 0.15));
+    mask-image: linear-gradient(to top, transparent 2%, black 20%);
+    -webkit-mask-image: linear-gradient(to top, transparent 2%, black 20%);
+    animation: floating 4s ease-in-out infinite;
+}
+
+/* কন্টেন্ট ডানে */
+.hero-content-right {
+    flex: 1.2;
+    padding-left: 50px;
+    z-index: 10;
+}
+
+.hero-title {
+    font-size: 4.5rem;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.highlight {
+    color: #ff3c3c;
+    background: linear-gradient(to right, #fff, #ff3c3c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 3px;
+    color: #888;
+    margin-bottom: 25px;
+}
+
+/* স্কিল রোটেটর স্টাইল */
+.skills-rotator {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #555;
+    letter-spacing: 2px;
+}
+
+#changing-text {
+    color: #fff;
+    border-left: 3px solid #ff3c3c;
+    padding-left: 10px;
+    margin-left: 5px;
+}
+
+/* মোবাইলের জন্য ঠিক করা */
+@media (max-width: 900px) {
+    .hero { flex-direction: column-reverse; text-align: center; }
+    .hero-content-right { padding-left: 0; padding-top: 100px; }
+    .hero-image-left { width: 100%; height: 50%; }
+    .hero-title { font-size: 3rem; }
+}
