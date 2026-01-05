@@ -1,8 +1,36 @@
 * { margin: 0; padding: 0; box-sizing: border-box; cursor: none !important; }
 body { background-color: #050505; color: #ffffff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
 
-#cursor { position: fixed; width: 50px; height: 50px; z-index: 99999; pointer-events: none; transform: translate(-50%, -50%); display: flex; justify-content: center; align-items: center; }
-#cursor img { width: 100%; filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5)); }
+/* কাঁচি মাউস কন্টেইনার */
+#cursor { 
+    position: fixed; 
+    width: 45px; 
+    height: 45px; 
+    z-index: 99999; 
+    pointer-events: none; 
+    transform: translate(-50%, -50%); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    transition: width 0.3s, height 0.3s;
+}
+
+/* কাঁচি ইমেজ */
+#cursor img { 
+    width: 100%; 
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5)); 
+    transition: filter 0.3s;
+}
+
+/* যখন মাউস কোনো টেক্সটের ওপর যাবে */
+#cursor.hover-active {
+    width: 65px;
+    height: 65px;
+}
+
+#cursor.hover-active img {
+    filter: drop-shadow(0 0 12px #ff3c3c) sepia(1) saturate(10) hue-rotate(-50deg); /* কাঁচি লাল হয়ে যাবে */
+}
 
 .navbar { display: flex; justify-content: space-between; padding: 20px 5%; position: fixed; width: 100%; z-index: 1000; background: rgba(5, 5, 5, 0.8); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255,255,255,0.05); }
 .logo { font-size: 1.8rem; font-weight: 900; }
@@ -14,7 +42,6 @@ body { background-color: #050505; color: #ffffff; font-family: 'Inter', sans-ser
 .hero-content { flex: 1; z-index: 10; }
 .brand-title { font-size: 8vw; font-weight: 900; line-height: 0.85; background: linear-gradient(to bottom, #fff, #444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-/* ইমেজ এনিমেশন - ১ কোটি টাকার লুক */
 .hero-image { position: absolute; right: 0; bottom: 0; width: 50%; height: 90%; z-index: 1; }
 .profile-img { 
     width: 100%; height: 100%; object-fit: contain; 
