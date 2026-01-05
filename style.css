@@ -1,213 +1,174 @@
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* ================= BASE ================= */
-
-html, body{
-  width:100%;
-  height:100%;
-}
-
-body{
-  background:#05070b;
-  color:#fff;
-  font-family:Poppins,sans-serif;
-  cursor:none;
-  overflow-x:hidden;
-}
-
-/* ===== SCALE SYSTEM (MAIN FIX) ===== */
-
-/* HOME = 175% LOOK */
-body.home{
-  transform: scale(1.75);
-  transform-origin: top center;
-  overflow:hidden;
-}
-
-/* OTHER PAGES = 150% LOOK */
-body.inner-page{
-  transform: scale(1.5);
-  transform-origin: top center;
-}
-
-/* MOBILE RESET */
-@media (max-width: 768px){
-  body.home,
-  body.inner-page{
-    transform: scale(1);
-    overflow:auto;
-  }
-}
-
-/* ================= CURSOR ================= */
-
-#cursor{
-  position:fixed;
-  left:0;
-  top:0;
-  pointer-events:none;
-  z-index:9999;
-  color:#00ffff;
-  font-size:28px;
-  transform:translate(-50%,-50%) rotate(-135deg);
-  text-shadow:0 0 20px #00ffff;
-  transition:transform 0.1s ease, filter 0.2s ease;
-}
-
-#cursor.cut{
-  transform:translate(-50%,-50%) rotate(-90deg) scale(0.85);
-}
-
-#cursor:hover{
-  filter:drop-shadow(0 0 15px #00ffff);
+body {
+  background: #05070b;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
 }
 
 /* ================= HEADER ================= */
-
-header{
-  position:absolute;
-  width:100%;
-  padding:30px 8%;
-  display:flex;
-  justify-content:space-between;
-  z-index:50;
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 32px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  background: linear-gradient(to bottom, rgba(5,7,11,0.9), transparent);
 }
 
-.logo{
-  font-family:Orbitron;
-  font-size:26px;
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
 }
 
-.logo span{color:#00ffff;}
-
-nav a{
-  color:#aaa;
-  text-decoration:none;
-  margin-left:30px;
-  font-size:14px;
+.logo span {
+  color: #00ffff;
 }
 
-.nav-btn{
-  padding:10px 22px;
-  border:1px solid #00ffff;
-  border-radius:30px;
+.nav a {
+  margin-left: 32px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #aaa;
+  transition: 0.3s;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: #00ffff;
+}
+
+.btn-outline {
+  padding: 12px 26px;
+  border: 1px solid #00ffff;
+  border-radius: 30px;
 }
 
 /* ================= HERO ================= */
-
-.hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  position:relative;
-  overflow:hidden;
-  background:#0b0b0b;
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 120px;
+  position: relative;
 }
 
-.hero-bg-glow{
-  position:absolute;
-  width:600px;
-  height:600px;
-  background:radial-gradient(circle,#00ffff33,transparent 70%);
-  filter:blur(120px);
+.hero-glow {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, #00ffff44, transparent 70%);
+  filter: blur(120px);
+  z-index: 0;
 }
 
-.hero-wrap{
-  width:85%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  z-index:2;
+.hero-container {
+  width: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
 }
 
-/* OVAL IMAGE */
-
-.hero-img{
-  width:420px;
-  height:500px;
-  border-radius:50% / 40%;
-  overflow:hidden;
-  border:4px solid #00ffff;
-  box-shadow:0 0 60px rgba(0,255,255,0.6);
+/* IMAGE */
+.hero-image {
+  width: 520px;
+  height: 640px;
+  border-radius: 50% / 40%;
+  overflow: hidden;
+  border: 4px solid #00ffff;
+  box-shadow: 0 0 80px rgba(0,255,255,0.45);
 }
 
-.hero-img img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  animation:float 6s ease-in-out infinite;
-}
-
-@keyframes float{
-  0%{transform:translateY(0)}
-  50%{transform:translateY(-20px)}
-  100%{transform:translateY(0)}
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* TEXT */
-
-.hero-text{
-  max-width:480px;
+.hero-content {
+  max-width: 520px;
 }
 
-.hero-text h4{
-  color:#00ffff;
-  letter-spacing:4px;
-  font-size:13px;
+.hero-content h4 {
+  color: #00ffff;
+  letter-spacing: 6px;
+  font-size: 14px;
+  margin-bottom: 20px;
 }
 
-.hero-text h1{
-  font-family:Orbitron;
-  font-size:4.5rem;
-  margin:15px 0;
+.hero-content h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 5.6rem;
+  line-height: 1.1;
+  margin-bottom: 25px;
 }
 
-.hero-text h1 span{
-  color:transparent;
-  -webkit-text-stroke:1px #fff;
+.hero-content h1 span {
+  color: transparent;
+  -webkit-text-stroke: 1px #ffffff;
 }
 
-.hero-text p{
-  color:#aaa;
-  line-height:1.8;
-  margin-bottom:30px;
+.hero-content p {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: #bcbcbc;
+  margin-bottom: 45px;
 }
 
-.btn{
-  display:inline-block;
-  padding:14px 36px;
-  background:#00ffff;
-  color:#000;
-  text-decoration:none;
-  font-weight:700;
-  border-radius:4px;
+/* BUTTONS */
+.hero-buttons {
+  display: flex;
+  gap: 20px;
 }
 
-/* ================= OTHER PAGES (UNCHANGED DESIGN) ================= */
+.btn-primary {
+  padding: 18px 46px;
+  background: #00ffff;
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+}
 
-/* Portfolio, About, Services, Contact
-   — তোমার আগের সব layout intact আছে
-   — scale দিয়েই visual বড় করা হয়েছে */
+.btn-secondary {
+  padding: 18px 46px;
+  border: 1px solid #00ffff;
+  color: #00ffff;
+  text-decoration: none;
+  border-radius: 6px;
+}
 
 /* ================= RESPONSIVE ================= */
-
-@media (max-width: 768px){
-  .hero-wrap{
-    flex-direction:column;
-    gap:40px;
+@media (max-width: 900px) {
+  .hero-container {
+    flex-direction: column;
+    gap: 60px;
+    text-align: center;
   }
 
-  .hero-img{
-    width:280px;
-    height:330px;
+  .hero-image {
+    width: 320px;
+    height: 400px;
   }
 
-  .hero-text h1{
-    font-size:3rem;
+  .hero-content h1 {
+    font-size: 3.4rem;
+  }
+
+  .hero-buttons {
+    justify-content: center;
   }
 }
