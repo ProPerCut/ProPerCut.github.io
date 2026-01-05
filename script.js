@@ -132,3 +132,12 @@ gsap.from("body",{
   duration:0.8,
   ease:"power2.out"
 });
+function openVideo(link) {
+  document.getElementById("modal").style.display = "block";
+  document.getElementById("player").src = link + "?autoplay=1";
+}
+
+function closeVideo() {
+  document.getElementById("modal").style.display = "none";
+  document.getElementById("player").src = "";
+}
