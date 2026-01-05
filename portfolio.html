@@ -1,65 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio | ProperCut</title>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio | ProperCut</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div id="cursor"><i class="fa-solid fa-scissors"></i></div>
+<header>
+  <div class="logo">Proper<span>Cut</span></div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="service.html">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" class="nav-btn">Contact</a>
+  </nav>
+</header>
 
-  <!-- CUSTOM CURSOR -->
-  <div id="cursor"><i class="fa-solid fa-scissors"></i></div>
-
-  <!-- HEADER -->
-  <header class="header">
-    <div class="logo">Proper<span>Cut</span></div>
-    <nav class="nav">
-      <a href="index.html" class="menu-link">Home</a>
-      <a href="service.html" class="menu-link">Services</a>
-      <a href="portfolio.html" class="menu-link">Portfolio</a>
-      <a href="about.html" class="menu-link">About</a>
-      <a href="contact.html" class="btn-outline menu-link">Contact</a>
-    </nav>
-  </header>
-
-  <!-- PORTFOLIO SECTION -->
-  <section class="portfolio">
-    <h1 class="page-title">My Work</h1>
-
-    <!-- FILTER -->
-    <div class="portfolio-filter">
-      <button class="active">All</button>
-      <button>Video</button>
-      <button>Animation</button>
-      <button>Editing</button>
+<section class="portfolio">
+  <h1 class="page-title">Portfolio</h1>
+  <div class="portfolio-grid">
+    <div class="portfolio-card">
+      <div class="video-thumb"><img src="assets/img/portfolio1.jpg" alt=""></div>
+      <h4>Documentary Video</h4>
     </div>
-
-    <!-- GRID -->
-    <div class="portfolio-grid">
-      <div class="portfolio-card">
-        <div class="video-thumb"><i class="fa-solid fa-play"></i></div>
-        <h4>YouTube Documentary</h4>
-      </div>
-      <div class="portfolio-card">
-        <div class="video-thumb"><i class="fa-solid fa-play"></i></div>
-        <h4>Faceless Automation</h4>
-      </div>
-      <div class="portfolio-card">
-        <div class="video-thumb"><i class="fa-solid fa-play"></i></div>
-        <h4>Cinematic Edit</h4>
-      </div>
-      <!-- আরো cards add করতে পারো -->
+    <div class="portfolio-card">
+      <div class="video-thumb"><img src="assets/img/portfolio2.jpg" alt=""></div>
+      <h4>Faceless Channel Video</h4>
     </div>
-  </section>
+    <div class="portfolio-card">
+      <div class="video-thumb"><img src="assets/img/portfolio3.jpg" alt=""></div>
+      <h4>Animated Short Film</h4>
+    </div>
+  </div>
+</section>
 
-  <audio id="cutSound" src="assets/sfx/cut.mp3"></audio>
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
