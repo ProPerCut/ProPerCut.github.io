@@ -76,3 +76,16 @@ gsap.utils.toArray(".case-card").forEach(card => {
     }
   });
 });
+// PROCESS PAGE SCROLL REVEAL
+gsap.utils.toArray(".process-step").forEach((step, i) => {
+  gsap.from(step, {
+    y: 80,
+    opacity: 0,
+    duration: 1,
+    delay: i * 0.05,
+    scrollTrigger: {
+      trigger: step,
+      start: "top 85%",
+    }
+  });
+});
