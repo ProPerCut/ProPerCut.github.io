@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>ProperCut — Cinematic Editing Studio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
@@ -27,20 +28,29 @@
   </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-  <video autoplay muted loop playsinline class="hero-video">
+  <video class="hero-video" autoplay muted loop playsinline>
     <source src="https://cdn.coverr.co/videos/coverr-editing-timeline-5405/1080p.mp4" type="video/mp4">
   </video>
 
   <div class="hero-overlay"></div>
 
   <div class="hero-content">
-    <h4>CINEMATIC VIDEO SYSTEMS</h4>
-    <h1>Editing That<br><span>Holds Attention</span></h1>
-    <p>I design high-retention documentary & automation edits that convert views into revenue.</p>
+    <h4 class="hero-tag">CINEMATIC VIDEO SYSTEMS</h4>
+    <h1 class="hero-title">
+      Editing That <br />
+      <span>Holds Attention</span>
+    </h1>
+    <p class="hero-desc">
+      High-retention documentary & automation edits designed to convert views into revenue.
+    </p>
     <a href="portfolio.html" class="btn">View Case Studies</a>
   </div>
 </section>
+
+<!-- SCROLL TRIGGER SPACE -->
+<section class="scroll-space"></section>
 
 <script src="script.js"></script>
 </body>
