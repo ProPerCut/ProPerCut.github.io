@@ -1,64 +1,61 @@
 /* =========================
-   GSAP CORE ANIMATIONS
+   GSAP SCROLL STORYTELLING
 ========================= */
 
 gsap.registerPlugin(ScrollTrigger);
 
-/* HERO INTRO */
-gsap.from(".hero-text h1", {
+// HERO IMAGE
+gsap.from(".hero-img", {
+  scrollTrigger: {
+    trigger: ".hero",
+    start: "top top",
+    end: "bottom top",
+    scrub: 1
+  },
   y: 80,
-  opacity: 0,
-  duration: 1.2,
-  ease: "power4.out"
+  scale: 0.9,
+  opacity: 0
 });
 
-gsap.from(".hero-text h4", {
-  y: 60,
-  opacity: 0,
-  duration: 1,
-  delay: 0.3,
-  ease: "power4.out"
-});
-
-gsap.from(".hero-text p", {
+// HERO TEXT
+gsap.from(".hero-text > *", {
+  scrollTrigger: {
+    trigger: ".hero",
+    start: "top 60%",
+  },
   y: 40,
   opacity: 0,
-  duration: 1,
-  delay: 0.6,
-  ease: "power4.out"
+  stagger: 0.15
 });
 
-gsap.from(".hero-img", {
-  scale: 0.85,
-  opacity: 0,
-  duration: 1.4,
-  ease: "expo.out"
-});
-
-/* SECTION REVEAL */
-gsap.utils.toArray(".section").forEach(section => {
-  gsap.from(section, {
-    opacity: 0,
-    y: 120,
-    duration: 1.4,
-    ease: "power4.out",
-    scrollTrigger: {
-      trigger: section,
-      start: "top 80%",
-    }
-  });
-});
-
-/* PORTFOLIO CARD STAGGER */
-gsap.from(".portfolio-card", {
-  y: 100,
-  opacity: 0,
-  stagger: 0.2,
-  duration: 1.2,
-  ease: "power4.out",
+// SERVICES
+gsap.from(".service-card", {
   scrollTrigger: {
-    trigger: ".portfolio-grid",
-    start: "top 75%"
-  }
+    trigger: "#services",
+    start: "top 70%",
+  },
+  y: 60,
+  opacity: 0,
+  stagger: 0.2
 });
 
+// PORTFOLIO
+gsap.from(".portfolio-card", {
+  scrollTrigger: {
+    trigger: "#portfolio",
+    start: "top 70%",
+  },
+  scale: 0.9,
+  opacity: 0,
+  stagger: 0.2
+});
+
+// ABOUT
+gsap.from(".about-left", {
+  scrollTrigger: {
+    trigger: "#about",
+    start: "top 70%",
+  },
+  x: -80,
+  opacity: 0
+});
