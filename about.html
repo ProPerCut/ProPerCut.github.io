@@ -1,57 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About | ProperCut</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | ProperCut</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div id="cursor"><i class="fa-solid fa-scissors"></i></div>
+<header>
+  <div class="logo">Proper<span>Cut</span></div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="service.html">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" class="nav-btn">Contact</a>
+  </nav>
+</header>
 
-  <div id="cursor"><i class="fa-solid fa-scissors"></i></div>
+<section class="about">
+  <div class="about-text">
+    <span class="about-tag">ABOUT ME</span>
+    <h1 class="about-name">Hasan Abdullah</h1>
+    <p class="about-desc">Founder of <span>ProperCut</span>, expert in video editing, animation & YouTube automation. Delivering cinematic, high-retention content for creators worldwide.</p>
+  </div>
+</section>
 
-  <header class="header">
-    <div class="logo">Proper<span>Cut</span></div>
-    <nav class="nav">
-      <a href="index.html" class="menu-link">Home</a>
-      <a href="service.html" class="menu-link">Services</a>
-      <a href="portfolio.html" class="menu-link">Portfolio</a>
-      <a href="about.html" class="menu-link">About</a>
-      <a href="contact.html" class="btn-outline menu-link">Contact</a>
-    </nav>
-  </header>
-
-  <section class="about">
-    <div class="about-text">
-      <span class="about-tag">WHO I AM</span>
-      <h1 class="about-name">Hasan Abdullah</h1>
-      <p class="about-desc">Founder of <span>ProperCut</span>. I specialize in video editing, cinematic 2D animations, and creating faceless automation content for high engagement YouTube channels.</p>
-
-      <div class="about-stats">
-        <div class="stat">
-          <h2>500+</h2>
-          <p>Projects Completed</p>
-        </div>
-        <div class="stat">
-          <h2>250+</h2>
-          <p>Happy Clients</p>
-        </div>
-        <div class="stat">
-          <h2>100%</h2>
-          <p>Client Satisfaction</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="about-image">
-      <img src="assets/img/hasan.jpg" alt="Hasan Abdullah">
-    </div>
-  </section>
-
-  <audio id="cutSound" src="assets/sfx/cut.mp3"></audio>
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
