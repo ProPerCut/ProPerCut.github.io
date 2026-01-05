@@ -141,3 +141,10 @@ function closeVideo() {
   document.getElementById("modal").style.display = "none";
   document.getElementById("player").src = "";
 }
+document.querySelectorAll('.side-menu a').forEach(link=>{
+  link.addEventListener('click',e=>{
+    e.preventDefault();
+    document.querySelector(link.getAttribute('href'))
+    .scrollIntoView({behavior:'smooth'});
+  });
+});
