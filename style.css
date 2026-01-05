@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    cursor: none; /* Original mouse hide kora hoyeche */
+    cursor: none !important; /* সব জায়গায় অরিজিনাল মাউস হাইড থাকবে */
 }
 
 body {
@@ -13,31 +13,36 @@ body {
     overflow-x: hidden;
 }
 
-/* Custom Scissors Cursor */
+/* Custom Scissors Cursor - আপনার মাউস এখন থেকে এটি */
 #cursor {
     position: fixed;
-    width: 40px;
-    height: 40px;
-    z-index: 9999;
+    width: 50px;
+    height: 50px;
+    z-index: 99999; 
     pointer-events: none;
-    transition: transform 0.1s ease;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #cursor img {
     width: 100%;
     transform-origin: center;
+    filter: drop-shadow(0 0 8px rgba(255,255,255,0.3)); /* কাঁচি যেন ফুটে ওঠে */
 }
 
 /* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
-    padding: 30px 5%;
+    padding: 20px 5%;
     position: fixed;
     width: 100%;
-    z-index: 100;
+    z-index: 1000;
     background: rgba(5, 5, 5, 0.8);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 .logo {
@@ -46,7 +51,7 @@ body {
     letter-spacing: -1px;
 }
 
-.logo span { color: #888; }
+.logo span { color: #ff3c3c; } /* Cut কথাটি লাল করলাম সলিড লুকের জন্য */
 
 .nav-links {
     display: flex;
@@ -57,10 +62,13 @@ body {
 .nav-links a {
     color: #fff;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 2px;
+    transition: 0.3s;
 }
+
+.nav-links a:hover { color: #ff3c3c; }
 
 /* Hero Section */
 .hero {
@@ -74,7 +82,7 @@ body {
 
 .hero-content {
     flex: 1;
-    z-index: 2;
+    z-index: 10;
 }
 
 .brand-title {
@@ -91,13 +99,14 @@ body {
     margin-top: 20px;
     color: #888;
     letter-spacing: 5px;
+    font-weight: 300;
 }
 
 .hero-image {
     position: absolute;
     right: 0;
     bottom: 0;
-    width: 50%;
+    width: 55%;
     height: 100%;
     z-index: 1;
 }
@@ -106,34 +115,36 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Image-er left side transparent fade kora */
-    mask-image: linear-gradient(to left, black 60%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to left, black 60%, transparent 100%);
+    /* Cinematic transparency fade - ছবির চারপাশে কালো বর্ডারের সাথে মিশে যাবে */
+    mask-image: linear-gradient(to left, black 60%, transparent 100%),
+                linear-gradient(to top, black 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to left, black 60%, transparent 100%),
+                        linear-gradient(to top, black 80%, transparent 100%);
 }
 
 /* Ticker Animation */
 .ticker-wrapper {
     position: absolute;
-    bottom: 30px;
+    bottom: 0;
     width: 100%;
     overflow: hidden;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 15px 0;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 20px 0;
     border-top: 1px solid #222;
-    border-bottom: 1px solid #222;
 }
 
 .ticker {
     display: flex;
     white-space: nowrap;
-    animation: scrollTicker 20s linear infinite;
+    animation: scrollTicker 30s linear infinite;
 }
 
 .ticker span {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 700;
-    margin-right: 50px;
-    color: #555;
+    margin-right: 60px;
+    color: #444;
+    letter-spacing: 2px;
 }
 
 @keyframes scrollTicker {
@@ -141,54 +152,99 @@ body {
     100% { transform: translateX(-50%); }
 }
 
-/* Services Section */
-.services { padding: 100px 10%; background: #080808; }
-.section-title { font-size: 4rem; margin-bottom: 50px; text-align: center; }
+/* Services & Portfolio Grid */
+.services { padding: 100px 10%; background: #050505; }
+.section-title { font-size: 3.5rem; margin-bottom: 60px; text-align: center; font-weight: 900; letter-spacing: -2px; }
 
 .service-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, min-max(350px, 1fr));
+    gap: 40px;
 }
 
 .service-card {
-    background: #111;
-    padding: 40px;
-    border: 1px solid #222;
-    transition: 0.3s;
+    background: #0d0d0d;
+    border: 1px solid #1a1a1a;
+    transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+    border-radius: 5px;
 }
 
-.service-card:hover { border-color: #fff; transform: translateY(-10px); }
+.service-card:hover { 
+    border-color: #ff3c3c; 
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
 
 /* Contact Form */
-.contact { padding: 100px 10%; }
+.contact { padding: 100px 10%; background: #080808; }
 form {
     max-width: 600px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
 }
 
-form input, form select, form button {
-    padding: 15px;
+form input, form select, form textarea {
+    padding: 18px;
     background: #111;
-    border: 1px solid #333;
+    border: 1px solid #222;
     color: #fff;
     outline: none;
+    font-family: 'Inter', sans-serif;
+    transition: 0.3s;
+}
+
+form input:focus, form select:focus, form textarea:focus {
+    border-color: #fff;
 }
 
 form button {
+    padding: 20px;
     background: #fff;
     color: #000;
-    font-weight: bold;
-    cursor: pointer;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: none;
+    margin-top: 10px;
+    transition: 0.3s;
 }
 
+form button:hover {
+    background: #ff3c3c;
+    color: #fff;
+}
+
+/* Social Links */
 .social-links {
-    margin-top: 50px;
+    margin-top: 60px;
     text-align: center;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
+}
+
+.social-links a {
+    color: #555;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.social-links a:hover { color: #fff; }
+
+/* মোবাইল রেসপন্সিভনেস */
+@media (max-width: 768px) {
+    * { cursor: auto !important; }
+    #cursor { display: none; }
+    
+    .brand-title { font-size: 18vw; }
+    .hero { flex-direction: column; text-align: center; padding-top: 120px; }
+    .hero-image { position: relative; width: 100%; height: 350px; }
+    .profile-img { mask-image: none; -webkit-mask-image: none; }
+    .nav-links { display: none; }
+    .section-title { font-size: 2.5rem; }
 }
