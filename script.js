@@ -1,13 +1,15 @@
 const cursor = document.getElementById("cursor");
-const cutSound = new Audio("assets/sound/cut.mp3");
-const rightSound = new Audio("assets/sound/right.mp3");
-const scrollSound = new Audio("assets/sound/scroll.mp3");
 
-document.addEventListener("mousemove", e=>{
+// Custom Sounds
+const cutSound = new Audio("assets/sound/cut.mp3");
+
+// Cursor Follow
+document.addEventListener("mousemove", e => {
   cursor.style.left = e.clientX + "px";
   cursor.style.top = e.clientY + "px";
 });
 
+// Left Click = cut
 document.addEventListener("mousedown", e=>{
   if(e.button===0){
     cutSound.currentTime=0;
@@ -19,13 +21,34 @@ document.addEventListener("mouseup", ()=>{
   cursor.classList.remove("cut");
 });
 
-document.addEventListener("contextmenu", e=>{
-  e.preventDefault();
-  rightSound.currentTime=0;
-  rightSound.play();
-});
+// Typing Animation
+const typedText = document.getElementById("typed-text");
+const texts = [
+  "Professional Video Editor",
+  "YouTube Automation Expert",
+  "Cinematic Editing",
+  "Faceless Content Creator"
+];
+let textIndex=0;
+let charIndex=0;
 
-window.addEventListener("wheel", ()=>{
-  scrollSound.currentTime=0;
-  scrollSound.play();
-});
+function typeWriter(){
+  if(charIndex<texts[textIndex].length){
+    typedText.textContent += texts[textIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(typeWriter,100);
+  }else{
+    setTimeout(eraseText,1500);
+  }
+}
+function eraseText(){
+  if(charIndex>0){
+    typedText.textContent = texts[textIndex].substring(0,charIndex-1);
+    charIndex--;
+    setTimeout(eraseText,50);
+  }else{
+    textIndex = (textIndex+1)%texts.length;
+    setTimeout(typeWriter,500);
+  }
+}
+typeWriter();
