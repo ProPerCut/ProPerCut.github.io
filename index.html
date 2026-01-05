@@ -54,17 +54,17 @@
 
     <section id="contact" class="contact">
         <h2 class="section-title">START A PROJECT</h2>
-        <form id="contact-form">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <select name="project_type">
-                <option value="documentary">Documentary Video</option>
-                <option value="cashcow">Cash Cow Video</option>
-                <option value="other">Other</option>
-            </select>
-            <input type="text" name="budget" placeholder="Estimated Budget ($)">
-            <button type="submit">SUBMIT REQUEST</button>
-        </form>
+        <form id="contact-form" action="https://formspree.io/f/mdakvege" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="_replyto" placeholder="Your Email" required>
+    <select name="project_type">
+        <option value="documentary">Documentary Video</option>
+        <option value="cashcow">Cash Cow Video</option>
+        <option value="other">Other</option>
+    </select>
+    <input type="text" name="budget" placeholder="Estimated Budget ($)">
+    <button type="submit">SUBMIT REQUEST</button>
+</form>
         
         <div class="social-links">
             <a href="https://www.facebook.com/profile.php?id=61585959697232">FB</a>
@@ -76,3 +76,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+
