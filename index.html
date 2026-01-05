@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ProperCut | Hasan Abdullah</title>
 
   <!-- Google Fonts -->
@@ -15,17 +15,20 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="home-page">
+<body>
+
+  <!-- CUSTOM CURSOR -->
+  <div id="cursor"><i class="fa-solid fa-scissors"></i></div>
 
   <!-- HEADER -->
   <header class="header">
     <div class="logo">Proper<span>Cut</span></div>
     <nav class="nav">
-      <a href="index.html" class="active">Home</a>
-      <a href="service.html">Services</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="about.html">About</a>
-      <a href="contact.html" class="btn-outline">Contact</a>
+      <a href="index.html" class="menu-link">Home</a>
+      <a href="service.html" class="menu-link">Services</a>
+      <a href="portfolio.html" class="menu-link">Portfolio</a>
+      <a href="about.html" class="menu-link">About</a>
+      <a href="contact.html" class="btn-outline menu-link">Contact</a>
     </nav>
   </header>
 
@@ -48,7 +51,6 @@
           Founder of <b>ProperCut</b>.<br>
           I create high-retention YouTube documentaries, cinematic edits & faceless automation content.
         </p>
-
         <div class="hero-buttons">
           <a href="portfolio.html" class="btn-primary">View Portfolio</a>
           <a href="contact.html" class="btn-secondary">Hire Me</a>
@@ -58,5 +60,10 @@
     </div>
   </section>
 
+  <!-- AUDIO FOR CURSOR CLICK -->
+  <audio id="cutSound" src="assets/sfx/cut.mp3"></audio>
+
+  <!-- JS -->
+  <script src="script.js"></script>
 </body>
 </html>
