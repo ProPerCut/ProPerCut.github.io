@@ -53,3 +53,26 @@ gsap.from(".hero-desc, .btn", {
   duration: 1,
   delay: .4
 });
+// Case study video hover (PC only)
+document.querySelectorAll(".case-media video").forEach(video => {
+  video.parentElement.addEventListener("mouseenter", () => {
+    video.play();
+  });
+  video.parentElement.addEventListener("mouseleave", () => {
+    video.pause();
+    video.currentTime = 0;
+  });
+});
+
+// Scroll reveal for case cards
+gsap.utils.toArray(".case-card").forEach(card => {
+  gsap.from(card, {
+    y: 80,
+    opacity: 0,
+    duration: 1,
+    scrollTrigger: {
+      trigger: card,
+      start: "top 85%",
+    }
+  });
+});
