@@ -1,1 +1,145 @@
 
+/* =========================
+   GLOBAL THEME
+========================= */
+header {
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+
+.section-head h1,
+.page-title,
+.about-name,
+.contact-box h1 {
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* =========================
+   NAV HOVER EFFECT
+========================= */
+nav a {
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: 0.3s ease;
+}
+
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
+
+/* =========================
+   SERVICE CARD GLOW
+========================= */
+.service-card {
+  transition: 0.4s ease;
+  box-shadow: 0 0 40px rgba(0,255,255,0.08);
+}
+
+.service-card:hover {
+  transform: translateY(-15px) scale(1.03);
+  box-shadow: 0 0 80px rgba(0,255,255,0.4);
+}
+
+/* =========================
+   PORTFOLIO CARD
+========================= */
+.portfolio-card {
+  background: var(--bg-soft);
+  padding: 20px;
+  border-radius: 16px;
+  transition: 0.4s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 0 60px rgba(0,255,255,0.35);
+}
+
+.video-thumb {
+  height: 160px;
+  background: linear-gradient(135deg, #00ffff33, #0055ff33);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.video-thumb i {
+  font-size: 38px;
+  color: var(--accent);
+  transition: 0.3s ease;
+}
+
+.portfolio-card:hover .video-thumb i {
+  transform: scale(1.4);
+}
+
+/* =========================
+   ABOUT STATS
+========================= */
+.about-stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.stat h2 {
+  color: var(--accent);
+  font-size: 2.6rem;
+}
+
+.stat p {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* =========================
+   CONTACT CARDS
+========================= */
+.contact-card {
+  background: var(--bg-soft);
+  padding: 40px 20px;
+  border-radius: 20px;
+  text-align: center;
+  transition: 0.4s ease;
+  box-shadow: 0 0 40px rgba(0,255,255,0.12);
+}
+
+.contact-card:hover {
+  transform: translateY(-12px) scale(1.06);
+  box-shadow: 0 0 90px rgba(0,255,255,0.5);
+}
+
+.contact-card i {
+  font-size: 32px;
+  color: var(--accent);
+  margin-bottom: 15px;
+}
+
+.contact-card span {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* =========================
+   HERO IMAGE FLOAT SHADOW
+========================= */
+.hero-img {
+  animation: glowPulse 6s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 50px rgba(0,255,255,0.4); }
+  50% { box-shadow: 0 0 80px rgba(0,255,255,0.7); }
+  100% { box-shadow: 0 0 50px rgba(0,255,255,0.4); }
+}
