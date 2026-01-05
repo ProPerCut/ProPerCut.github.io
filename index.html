@@ -1,61 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ProperCut | Hasan Abdullah</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProperCut | Hasan Abdullah</title>
 
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<!-- Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<!-- CSS -->
-<link rel="stylesheet" href="style.css">
-
-<!-- GSAP -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="home">
+<body class="home-page">
 
-<!-- Custom Cursor (ONLY ONCE) -->
-<div id="cursor">
-  <i class="fa-solid fa-scissors"></i>
-</div>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">Proper<span>Cut</span></div>
+    <nav class="nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="service.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="btn-outline">Contact</a>
+    </nav>
+  </header>
 
-<header>
-  <div class="logo">Proper<span>Cut</span></div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="service.html">Services</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="about.html">About</a>
-    <a href="contact.html" class="nav-btn">Contact</a>
-  </nav>
-</header>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-glow"></div>
 
-<section class="hero">
-  <div class="hero-bg-glow"></div>
+    <div class="hero-container">
 
-  <div class="hero-wrap">
-    <div class="hero-img">
-      <img src="assets/img/hasan.jpg" alt="Hasan Abdullah">
+      <!-- LEFT IMAGE -->
+      <div class="hero-image">
+        <img src="assets/img/hasan.jpg" alt="Hasan Abdullah">
+      </div>
+
+      <!-- RIGHT TEXT -->
+      <div class="hero-content">
+        <h4>VIDEO EDITOR & 2D ANIMATOR</h4>
+        <h1>
+          Hasan <span>Abdullah</span>
+        </h1>
+        <p>
+          Founder of <b>ProperCut</b>.  
+          I create high-retention YouTube documentaries,  
+          cinematic edits & faceless automation content.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="portfolio.html" class="btn-primary">View Portfolio</a>
+          <a href="contact.html" class="btn-secondary">Hire Me</a>
+        </div>
+      </div>
+
     </div>
+  </section>
 
-    <div class="hero-text">
-      <h4>VIDEO EDITOR & 2D ANIMATOR</h4>
-      <h1>Hasan <span>Abdullah</span></h1>
-      <p>
-        Founder of <b>ProperCut</b>.<br>
-        Creating high-retention YouTube documentaries, faceless automation & cinematic edits.
-      </p>
-      <a href="portfolio.html" class="btn">View Portfolio</a>
-    </div>
-  </div>
-</section>
-
-<script src="script.js"></script>
 </body>
 </html>
