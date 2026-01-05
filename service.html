@@ -1,82 +1,58 @@
-<div id="cursor">
-  <i class="fa-solid fa-scissors"></i>
-</div>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Services | ProperCut</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | ProperCut</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<link rel="stylesheet" href="style.css">
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header>
-  <div class="logo">Proper<span>Cut</span></div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="service.html">Services</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="about.html">About</a>
-    <a href="contact.html" class="nav-btn">Contact</a>
-  </nav>
-</header>
+  <div id="cursor"><i class="fa-solid fa-scissors"></i></div>
 
-<section class="services">
-  <div class="section-head">
-    <h4>WHAT I OFFER</h4>
-    <h1>Professional Video Editing Services</h1>
-    <p>High-retention edits designed to grow channels, brands & revenue.</p>
-  </div>
+  <header class="header">
+    <div class="logo">Proper<span>Cut</span></div>
+    <nav class="nav">
+      <a href="index.html" class="menu-link">Home</a>
+      <a href="service.html" class="menu-link">Services</a>
+      <a href="portfolio.html" class="menu-link">Portfolio</a>
+      <a href="about.html" class="menu-link">About</a>
+      <a href="contact.html" class="btn-outline menu-link">Contact</a>
+    </nav>
+  </header>
 
-  <div class="service-grid">
-
-    <div class="service-card">
-      <i class="fa-solid fa-robot"></i>
-      <h3>YouTube Automation</h3>
-      <p>Faceless cash-cow videos with engaging visuals, stock footage, captions & sound design.</p>
+  <section class="services">
+    <div class="section-head">
+      <h4>WHAT I OFFER</h4>
+      <h1>My Services</h1>
+      <p>High-quality video editing, animation & faceless content creation for YouTube and other platforms.</p>
     </div>
 
-    <div class="service-card">
-      <i class="fa-solid fa-money-bill-trend-up"></i>
-      <h3>Cash Cow Editing</h3>
-      <p>Retention-focused editing optimized for monetization and long watch time.</p>
+    <div class="service-grid">
+      <div class="service-card">
+        <i class="fa-solid fa-film"></i>
+        <h3>Video Editing</h3>
+        <p>Professional YouTube editing with cinematic effects & fast retention techniques.</p>
+      </div>
+
+      <div class="service-card">
+        <i class="fa-solid fa-pen-nib"></i>
+        <h3>2D Animation</h3>
+        <p>Engaging animations for documentaries, explainer videos, and faceless content.</p>
+      </div>
+
+      <div class="service-card">
+        <i class="fa-solid fa-robot"></i>
+        <h3>Faceless Automation</h3>
+        <p>Create high-performing faceless automation content that attracts audience.</p>
+      </div>
     </div>
+  </section>
 
-    <div class="service-card">
-      <i class="fa-solid fa-film"></i>
-      <h3>Documentary Videos</h3>
-      <p>Cinematic storytelling with smooth pacing, sound design and emotional flow.</p>
-    </div>
-
-    <div class="service-card">
-      <i class="fa-solid fa-landmark"></i>
-      <h3>Historical Content</h3>
-      <p>Visually rich historical videos using archive footage, maps & animations.</p>
-    </div>
-
-    <div class="service-card">
-      <i class="fa-solid fa-chart-line"></i>
-      <h3>Retention Optimization</h3>
-      <p>Advanced cuts, zooms, effects & pattern interrupts to hold audience attention.</p>
-    </div>
-
-    <div class="service-card">
-      <i class="fa-solid fa-headphones"></i>
-      <h3>Sound Design</h3>
-      <p>Professional SFX, background music & audio leveling for immersive experience.</p>
-    </div>
-
-  </div>
-</section>
-
-<script src="script.js"></script>
+  <audio id="cutSound" src="assets/sfx/cut.mp3"></audio>
+  <script src="script.js"></script>
 </body>
 </html>
