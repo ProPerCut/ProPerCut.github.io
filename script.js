@@ -58,12 +58,19 @@ function loadVideos() {
 
 window.onload = loadVideos;
 
-// ৫. কন্টাক্ট ফরম সাবমিশন হ্যান্ডলার
+// Formspree Submission Handling
 const contactForm = document.getElementById('contact-form');
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const formData = new FormData(contactForm);
-    const data = Object.fromEntries(formData.entries());
+
+contactForm.addEventListener('submit', function(e) {
+    // Form-ta submit hoye jabe automatic, amra shudhu page-ta jeno reload na hoy sheta thik korchi
+    console.log("Form submitted to Formspree!");
+    
+    // User-ke dhonyobad jananor jonno
+    setTimeout(() => {
+        alert('Dhonyobad Hasan bhai! Apnar client-er message-ti apnar email-e chole geche.');
+        contactForm.reset(); // Form-ta khali kore deya
+    }, 500);
+});
     
     // ডাটা সেভ করার সিস্টেম (আপাতত লোকাল স্টোরেজে রাখছি যাতে আপনি দেখতে পারেন)
     let submissions = JSON.parse(localStorage.getItem('formSubmissions') || '[]');
