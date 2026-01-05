@@ -104,3 +104,31 @@ gsap.from(".form-step", {
   stagger: 0.12,
   delay: 0.4
 });
+/* ================= FINAL POLISH LOGIC ================= */
+
+// CUSTOM CURSOR MOVE
+const cursor = document.getElementById("cursor");
+
+if(cursor){
+  window.addEventListener("mousemove", e => {
+    cursor.style.top = e.clientY + "px";
+    cursor.style.left = e.clientX + "px";
+  });
+}
+
+// MICRO SCALE ON CLICK
+document.querySelectorAll("a, button").forEach(el=>{
+  el.addEventListener("mousedown",()=>{
+    if(cursor) cursor.style.transform = "translate(-50%,-50%) scale(0.8)";
+  });
+  el.addEventListener("mouseup",()=>{
+    if(cursor) cursor.style.transform = "translate(-50%,-50%) scale(1)";
+  });
+});
+
+// SUBTLE PAGE LOAD FADE
+gsap.from("body",{
+  opacity:0,
+  duration:0.8,
+  ease:"power2.out"
+});
