@@ -84,3 +84,15 @@ a {
 .logo span {
   color: var(--accent);
 }
+/* =========================
+   BACKGROUND CANVAS
+========================= */
+#bg-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: radial-gradient(circle at top, #001a1a, #000);
+}
