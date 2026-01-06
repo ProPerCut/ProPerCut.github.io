@@ -53,3 +53,143 @@ form button:hover { background: #ff3c3c; color: #fff; }
 .social-links a:hover { color: #fff; font-weight: 900; }
 
 @media (max-width: 900px) { .hero { flex-direction: column-reverse; text-align: center; } .hero-content-right { padding: 100px 0 0; } .hero-image-left { width: 100%; height: 50%; } }
+/* ===============================
+   PREMIUM TIMELINE BACKGROUND
+================================ */
+
+.timeline-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.35;
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  gap: 30px;
+  margin: 35px 0;
+  animation: timelineMove 18s linear infinite;
+}
+
+.track.alt {
+  animation-duration: 26s;
+  opacity: 0.6;
+}
+
+.track.slow {
+  animation-duration: 38s;
+  opacity: 0.4;
+}
+
+.track span {
+  width: 240px;
+  height: 18px;
+  background: linear-gradient(
+    90deg,
+    #1e40af,
+    #38bdf8
+  );
+  border-radius: 3px;
+}
+
+/* Timeline animation */
+@keyframes timelineMove {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(100%); }
+}
+
+/* Playhead line */
+.timeline-bg::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: #ff3c3c;
+  opacity: 0.25;
+}
+
+/* ===============================
+   HERO LAYOUT UPGRADE
+================================ */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 5%;
+}
+
+/* BIGGER IMAGE */
+.profile-img {
+  height: 95%;
+  animation: floating 6s ease-in-out infinite;
+  filter: drop-shadow(0 0 40px rgba(0,0,0,0.9));
+}
+
+/* ===============================
+   LUXURY TYPOGRAPHY
+================================ */
+
+.hero-title {
+  font-size: 5.2rem;
+  font-weight: 900;
+  letter-spacing: -2px;
+  line-height: 1;
+}
+
+.hero-title .last-name {
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #9ca3af;
+  margin: 25px 0;
+}
+
+.skills-rotator {
+  font-size: 1rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #6b7280;
+}
+
+#changing-text {
+  color: #ffffff;
+  margin-left: 10px;
+  border-left: 3px solid #ff3c3c;
+  padding-left: 12px;
+}
+
+/* ===============================
+   MOBILE FIX
+================================ */
+
+@media (max-width: 900px) {
+  .hero-inner {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .profile-img {
+    height: 70%;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+  }
+}
+
