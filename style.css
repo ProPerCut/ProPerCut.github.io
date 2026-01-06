@@ -1,65 +1,55 @@
-/* জেনারেল সেটিংস */
 * { margin: 0; padding: 0; box-sizing: border-box; cursor: none !important; }
-html { scroll-behavior: smooth; }
 body { background-color: #050505; color: #ffffff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
 
-/* মাউস ডিজাইন ও ড্র্যাগ ইফেক্ট */
-#cursor { position: fixed; width: 45px; height: 45px; z-index: 99999; pointer-events: none; left: 0; top: 0; }
-#cursor img { width: 100%; filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5)); transition: transform 0.1s ease-out; }
+/* কাঁচি মাউস */
+#cursor { position: fixed; width: 45px; height: 45px; z-index: 99999; pointer-events: none; transform: translate(-50%, -50%); transition: width 0.3s, height 0.3s; }
+#cursor img { width: 100%; filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5)); }
+#cursor.hover-active { width: 65px; height: 65px; }
+#cursor.hover-active img { filter: drop-shadow(0 0 12px #ff3c3c) sepia(1) saturate(10) hue-rotate(-50deg); }
 
-/* হোভার করলে মাউস বড় ও লাল হওয়া */
-.cursor-hover img { filter: drop-shadow(0 0 15px #ff3c3c) sepia(1) saturate(10) !important; transform: scale(1.4) !important; }
-
-/* নেভিগেশন বার */
-.navbar { display: flex; justify-content: space-between; align-items: center; padding: 25px 8%; position: fixed; width: 100%; z-index: 1000; background: rgba(5, 5, 5, 0.9); backdrop-filter: blur(10px); }
-.logo { font-size: 2rem; font-weight: 900; letter-spacing: -1px; }
+/* নেভিগেশন */
+.navbar { display: flex; justify-content: space-between; padding: 20px 5%; position: fixed; width: 100%; z-index: 1000; background: rgba(5, 5, 5, 0.8); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255,255,255,0.05); }
+.logo { font-size: 1.8rem; font-weight: 900; }
 .logo span { color: #ff3c3c; }
-.nav-links { display: flex; list-style: none; gap: 40px; }
-.nav-links a { color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: 400; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; }
-.nav-links a:hover { color: #ff3c3c; font-weight: 900; transform: scale(1.1); }
+.nav-links { display: flex; list-style: none; gap: 30px; }
+.nav-links a { color: #fff; text-decoration: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; }
+.nav-links a:hover { color: #ff3c3c; font-weight: 900; }
 
-/* হিরো সেকশন */
-.hero { height: 100vh; display: flex; align-items: center; justify-content: space-between; padding: 0 8%; position: relative; }
+/* হিরো সেকশন (বামে ছবি, ডানে লেখা) */
+.hero { height: 100vh; display: flex; align-items: center; justify-content: space-between; padding: 0 5%; position: relative; }
+.hero-image-left { flex: 1; height: 100%; display: flex; align-items: flex-end; justify-content: flex-start; }
+.profile-img { height: 85%; max-width: 100%; object-fit: contain; animation: floating 4s ease-in-out infinite; mask-image: linear-gradient(to top, transparent 5%, black 30%); -webkit-mask-image: linear-gradient(to top, transparent 5%, black 30%); }
 
-/* ইমেজ বামে এবং ফিক্সড (জুম হলেও সমস্যা হবে না) */
-.hero-image-left { flex: 1; height: 100%; display: flex; align-items: flex-end; }
-.profile-img { 
-    height: 85vh; width: auto; object-fit: contain; 
-    mask-image: linear-gradient(to top, transparent 2%, black 20%);
-    -webkit-mask-image: linear-gradient(to top, transparent 2%, black 20%);
-    animation: floatAnim 4s ease-in-out infinite;
-}
+.hero-content-right { flex: 1.2; padding-left: 40px; }
+.hero-title { font-size: 4rem; font-weight: 900; line-height: 1.1; }
+.highlight { color: #ff3c3c; }
+.hero-subtitle { font-size: 1.4rem; color: #888; letter-spacing: 2px; margin: 15px 0; }
+.skills-rotator { font-size: 1.1rem; color: #555; font-weight: 700; }
+#changing-text { color: #fff; border-left: 3px solid #ff3c3c; padding-left: 10px; margin-left: 5px; }
 
-@keyframes floatAnim { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+@keyframes floating { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
 
-/* টেক্সট ডানে */
-.hero-content-right { flex: 1.2; padding-left: 60px; z-index: 10; }
-.hi-text { font-size: 2.2rem; color: #ff3c3c; font-weight: 300; margin-bottom: 5px; }
-.hero-title { font-size: 5rem; font-weight: 900; line-height: 1; }
-.highlight { color: #fff; text-shadow: 0 0 20px rgba(255,255,255,0.2); }
-.hero-subtitle { font-size: 1.8rem; font-weight: 400; color: #888; margin-top: 10px; }
-.pc-text { color: #fff; font-weight: 900; }
+/* টিকিট এনিমেশন */
+.ticker-wrapper { position: absolute; bottom: 0; width: 100%; background: rgba(255,255,255,0.03); padding: 15px 0; overflow: hidden; }
+.ticker { display: flex; animation: scroll 20s linear infinite; }
+.ticker span { margin-right: 50px; font-weight: 700; color: #333; }
+@keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-.skills-rotator { font-size: 1.2rem; color: #444; font-weight: 700; margin-top: 30px; border-top: 1px solid #222; padding-top: 20px; }
-#changing-text { color: #ff3c3c; margin-left: 10px; }
-
-/* পোর্টফোলিও ভিডিও গ্রিড */
-.services { padding: 100px 8%; }
-.section-title { font-size: 3rem; font-weight: 900; margin-bottom: 60px; text-align: center; }
-.service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
-.service-card { background: #0d0d0d; border-radius: 12px; border: 1px solid #1a1a1a; overflow: hidden; transition: 0.4s; }
+/* পোর্টফোলিও গ্রিড */
+.services { padding: 100px 10%; }
+.section-title { font-size: 3rem; margin-bottom: 50px; text-align: center; }
+.service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+.service-card { background: #0d0d0d; border: 1px solid #222; border-radius: 10px; overflow: hidden; transition: 0.4s; }
 .service-card:hover { border-color: #ff3c3c; transform: translateY(-10px); }
 
-/* কন্টাক্ট ফর্ম */
-.contact { padding: 100px 8%; background: #080808; }
-form { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
-form input, form textarea { padding: 18px; background: #111; border: 1px solid #333; color: #fff; font-family: inherit; }
-form button { padding: 18px; background: #fff; color: #000; font-weight: 900; border: none; cursor: none; transition: 0.3s; }
+/* কন্টাক্ট ও সোশ্যাল */
+.contact { padding: 100px 10%; background: #080808; }
+form { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
+form input, form textarea { padding: 15px; background: #111; border: 1px solid #333; color: #fff; outline: none; }
+form button { padding: 15px; background: #fff; color: #000; font-weight: 900; border: none; transition: 0.3s; }
 form button:hover { background: #ff3c3c; color: #fff; }
+.social-links { margin-top: 40px; display: flex; justify-content: center; gap: 20px; }
+.social-links a { color: #555; text-decoration: none; transition: 0.3s; }
+.social-links a:hover { color: #fff; font-weight: 900; }
 
-.ticker-wrapper { position: absolute; bottom: 0; left: 0; width: 100%; background: #0a0a0a; padding: 15px 0; overflow: hidden; }
-.ticker { display: flex; animation: tickerScroll 25s linear infinite; }
-.ticker span { margin-right: 60px; font-weight: 900; color: #1a1a1a; font-size: 2rem; }
-@keyframes tickerScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-
-@media (max-width: 1024px) { .hero { flex-direction: column-reverse; text-align: center; } .hero-content-right { padding: 0; } .profile-img { height: 50vh; } }
+@media (max-width: 900px) { .hero { flex-direction: column-reverse; text-align: center; } .hero-content-right { padding: 100px 0 0; } .hero-image-left { width: 100%; height: 50%; } }
