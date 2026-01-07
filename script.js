@@ -132,3 +132,14 @@ document.querySelectorAll(".service-card").forEach(card=>{
     });
   });
 });
+gsap.from(".portfolio-card",{
+  scrollTrigger:{
+    trigger:"#portfolio",
+    start:"top 80%"
+  },
+  y:60,
+  opacity:0,
+  stagger:.15,
+  duration:1,
+  ease:"power3.out"
+});
