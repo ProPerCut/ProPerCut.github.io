@@ -62,3 +62,53 @@ document.querySelectorAll(".nav-item").forEach(link=>{
     target.scrollIntoView({behavior:"smooth"});
   });
 });
+/* TYPING EFFECT */
+const typingTexts = [
+  "FACELESS VIDEO EDITOR",
+  "CRIME DOCUMENTARY EDITOR",
+  "RETENTION STORYTELLER"
+];
+
+let typingIndex = 0;
+let charIndex = 0;
+let typingEl = document.getElementById("typingText");
+
+function typeEffect(){
+  if(charIndex < typingTexts[typingIndex].length){
+    typingEl.textContent += typingTexts[typingIndex][charIndex];
+    charIndex++;
+    setTimeout(typeEffect, 80);
+  } else {
+    setTimeout(eraseEffect, 1800);
+  }
+}
+
+function eraseEffect(){
+  if(charIndex > 0){
+    typingEl.textContent = typingTexts[typingIndex].substring(0, charIndex - 1);
+    charIndex--;
+    setTimeout(eraseEffect, 50);
+  } else {
+    typingIndex = (typingIndex + 1) % typingTexts.length;
+    setTimeout(typeEffect, 300);
+  }
+}
+
+typingEl.textContent="";
+typeEffect();
+/* HERO LOAD ANIMATION */
+gsap.from(".hero-image-wrap img",{
+  x:-80,
+  opacity:0,
+  duration:1.2,
+  ease:"power3.out"
+});
+
+gsap.from(".hero-text > *",{
+  y:40,
+  opacity:0,
+  duration:1,
+  stagger:.15,
+  delay:.4,
+  ease:"power3.out"
+});
