@@ -18,6 +18,10 @@ body{font-family:Inter;background:#050505;color:#fff;cursor:none}
   filter:drop-shadow(0 0 6px #ff3c3c);
   transition:.2s;
 }
+.logo:hover ~ #cursor #scissor{
+  stroke:#00ffcc;
+  filter:drop-shadow(0 0 8px #00ffcc);
+}
 
 
 /* NAV */
