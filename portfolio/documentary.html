@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Documentary Work | ProperCut</title>
+<title>Documentary Portfolio | ProperCut</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -13,87 +13,65 @@ body{background:#050505;color:#fff}
 
 /* PAGE */
 .portfolio-page{
-  padding:160px 8%;
-  text-align:center;
+  padding:140px 8%;
 }
 
 /* TITLE */
 .portfolio-title{
   font-family:Anton;
-  font-size:4rem;
+  font-size:4.2rem;
   letter-spacing:2px;
+  text-align:center;
 }
 .portfolio-title span{color:#ff3c3c}
 
 .portfolio-sub{
   margin:20px auto 80px;
-  max-width:700px;
+  max-width:760px;
+  text-align:center;
   color:#aaa;
-  line-height:1.7;
+  line-height:1.8;
 }
 
 /* GRID */
 .video-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:35px;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:40px;
 }
 
 /* CARD */
 .video-card{
-  position:relative;
-  padding:35px 25px;
-  background:linear-gradient(180deg,#0c0c0c,#070707);
+  background:#0c0c0c;
   border:1px solid #1a1a1a;
   border-radius:22px;
-  text-decoration:none;
-  color:#fff;
-  transition:.45s ease;
   overflow:hidden;
-}
-
-/* ICON */
-.video-thumb{
-  width:72px;
-  height:72px;
-  margin:0 auto 20px;
-  border-radius:50%;
-  background:#ff3c3c;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:1.6rem;
-  box-shadow:0 0 25px rgba(255,60,60,.6);
-}
-
-/* TEXT */
-.video-card h3{
-  font-size:1.1rem;
-  margin-bottom:8px;
-}
-.video-card p{
-  font-size:.9rem;
-  color:#aaa;
-}
-
-/* GLOW BORDER */
-.video-card::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:22px;
-  background:linear-gradient(120deg,transparent,#ff3c3c,transparent);
-  opacity:0;
   transition:.4s;
 }
 
-/* HOVER */
 .video-card:hover{
-  transform:translateY(-14px) scale(1.02);
+  transform:translateY(-12px);
   box-shadow:0 35px 80px rgba(0,0,0,.8);
 }
-.video-card:hover::before{
-  opacity:.18;
+
+/* VIDEO */
+.video-card iframe{
+  width:100%;
+  height:220px;
+  border:none;
+}
+
+/* TEXT */
+.video-info{
+  padding:18px 20px 24px;
+}
+.video-info h3{
+  font-size:1.05rem;
+  margin-bottom:6px;
+}
+.video-info p{
+  font-size:.9rem;
+  color:#aaa;
 }
 
 /* MOBILE */
@@ -108,135 +86,50 @@ body{background:#050505;color:#fff}
 <section class="portfolio-page">
 
   <h1 class="portfolio-title">
-    DOCUMENTARY <span>WORK</span>
+    DOCUMENTARY <span>PORTFOLIO</span>
   </h1>
 
   <p class="portfolio-sub">
-    Crime • Mystery • Science • Space • History • Reality-based storytelling  
-    edited for maximum retention and cinematic impact.
+    High-retention crime, mystery, science & reality-based documentaries  
+    edited for YouTube automation & long-term growth.
   </p>
 
   <div class="video-grid">
 
-    <a class="video-card" target="_blank" href="https://www.youtube.com/watch?v=hqS6foLBqII">
-      <div class="video-thumb">▶</div>
-      <h3>AI & Future Technology</h3>
-      <p>Artificial intelligence & upcoming tech</p>
-    </a>
+    <!-- VIDEO CARD -->
+    <div class="video-card">
+      <iframe src="https://www.youtube.com/embed/hqS6foLBqII?autoplay=1&mute=1&loop=1&playlist=hqS6foLBqII"></iframe>
+      <div class="video-info">
+        <h3>AI & Future Technology</h3>
+        <p>Artificial intelligence & future science</p>
+      </div>
+    </div>
 
-    <a class="video-card" target="_blank" href="https://youtu.be/mCb56qgwAfc">
-      <div class="video-thumb">▶</div>
-      <h3>Bermuda Triangle Mystery</h3>
-      <p>Unsolved ocean mystery</p>
-    </a>
+    <div class="video-card">
+      <iframe src="https://www.youtube.com/embed/mCb56qgwAfc?autoplay=1&mute=1"></iframe>
+      <div class="video-info">
+        <h3>Bermuda Triangle Mystery</h3>
+        <p>Unsolved ocean mystery</p>
+      </div>
+    </div>
 
-    <a class="video-card" target="_blank" href="https://youtu.be/Sj3xTN9znLM">
-      <div class="video-thumb">▶</div>
-      <h3>SpaceX & Space Science</h3>
-      <p>Modern rocket technology</p>
-    </a>
+    <div class="video-card">
+      <iframe src="https://www.youtube.com/embed/Sj3xTN9znLM?autoplay=1&mute=1"></iframe>
+      <div class="video-info">
+        <h3>SpaceX & Space Science</h3>
+        <p>Modern rocket engineering</p>
+      </div>
+    </div>
 
-    <a class="video-card" target="_blank" href="https://youtu.be/MnajaX314AQ">
-      <div class="video-thumb">▶</div>
-      <h3>Ancient Civilizations</h3>
-      <p>Lost history & human past</p>
-    </a>
+    <div class="video-card">
+      <iframe src="https://www.youtube.com/embed/MnajaX314AQ?autoplay=1&mute=1"></iframe>
+      <div class="video-info">
+        <h3>Ancient Civilizations</h3>
+        <p>Lost human history</p>
+      </div>
+    </div>
 
-    <a class="video-card" target="_blank" href="https://youtu.be/yiasyeiy9mA">
-      <div class="video-thumb">▶</div>
-      <h3>Mysteries of Space</h3>
-      <p>Unknown cosmic phenomena</p>
-    </a>
-
-    <a class="video-card" target="_blank" href="https://youtu.be/aV6FobSSeEY">
-      <div class="video-thumb">▶</div>
-      <h3>Nature & Environment</h3>
-      <p>Earth, climate & ecosystem</p>
-    </a>
-
-    <a class="video-card" target="_blank" href="https://youtu.be/IrsTQUrBSYc">
-      <div class="video-thumb">▶</div>
-      <h3>Unknown Science Facts</h3>
-      <p>Mind-blowing discoveries</p>
-    </a>
-
-    <a class="video-card" target="_blank" href="https://youtu.be/6AZ305q2MHE">
-      <div class="video-thumb">▶</div>
-      <h3>Origin of the Universe</h3>
-      <p>Big Bang & cosmos</p>
-    </a>
-
-    <a class="video-card" target="_blank" href="https://youtu.be/0RiwIv3FGYQ">
-      <div class="video-thumb">▶</div>
-      <h3>History of Earth</h3>
-      <p>Planet evolution</p>
-    </a>
-
-    <a class="video-card" target="_blank" href="https://youtu.be/H1zl9JAoHmQ">
-      <div class="video-thumb">▶</div>
-      <h3>Black Hole Documentary</h3>
-      <p>Extreme cosmic objects</p>
-    </a>
-
-    <a class="video-card" target="_blank" href="https://youtu.be/C-W2G6m8DEo">
-      <div class="video-thumb">▶</div>
-      <h3>Deep Sea Mysteries</h3>
-      <p>Ocean depths unexplored</p>
-    </a>
-
-    <a class="video-card" target="_blank" href="https://youtu.be/_6xMlFE4xls">
-      <div class="video-thumb">▶</div>
-      <h3>Human Evolution</h3>
-      <p>Evolution of mankind</p>
-    </a>
-
-    <a class="video-card" target="_blank" href="https://youtu.be/__bDFcLFz1c">
-      <div class="video-thumb">▶</div>
-      <h3>Space Dust & Stars</h3>
-      <p>Birth of galaxies</p>
-    </a>
-
-    <a class="video-card" target="_blank" href="https://youtu.be/9QMeg_ad-o0">
-      <div class="video-thumb">▶</div>
-      <h3>Biology & DNA</h3>
-      <p>Life at molecular level</p>
-    </a>
-
-    <a class="video-card" target="_blank" href="https://youtu.be/kNiw8ulVg_A">
-      <div class="video-thumb">▶</div>
-      <h3>Rocket Science</h3>
-      <p>Space engineering explained</p>
-    </a>
-
-    <a class="video-card" target="_blank" href="https://youtu.be/D2WId6wVN5Q">
-      <div class="video-thumb">▶</div>
-      <h3>Quantum Physics</h3>
-      <p>Reality beyond logic</p>
-    </a>
-
-    <a class="video-card" target="_blank" href="https://youtu.be/Sm3JDBpCKAQ">
-      <div class="video-thumb">▶</div>
-      <h3>Einstein’s Theory</h3>
-      <p>Relativity explained</p>
-    </a>
-
-    <a class="video-card" target="_blank" href="https://youtu.be/jlBFIJV2nug">
-      <div class="video-thumb">▶</div>
-      <h3>Mars Colonization</h3>
-      <p>Future of humanity</p>
-    </a>
-
-    <a class="video-card" target="_blank" href="https://youtu.be/3R952sO5KoA">
-      <div class="video-thumb">▶</div>
-      <h3>Galaxy Secrets</h3>
-      <p>Unknown universe facts</p>
-    </a>
-
-    <a class="video-card" target="_blank" href="https://youtu.be/VZMRgrNDXfI">
-      <div class="video-thumb">▶</div>
-      <h3>End of the Earth</h3>
-      <p>Apocalyptic science</p>
-    </a>
+    <!-- তুমি চাইলে একই structure এ বাকি সব add করবে -->
 
   </div>
 
