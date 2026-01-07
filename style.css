@@ -1,13 +1,24 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:Inter;background:#050505;color:#fff;cursor:none}
 
-/* CURSOR */
-#cursor{position:fixed;z-index:9999;pointer-events:none}
-.scissor{
-width:30px;height:30px;
-border:2px solid #ff3c3c;
-transform:rotate(-45deg);
+/* CUSTOM CURSOR */
+#cursor{
+  position:fixed;
+  width:40px;
+  height:40px;
+  pointer-events:none;
+  z-index:9999;
+  transform:translate(-50%,-50%);
 }
+
+#scissor{
+  stroke:#ff3c3c;
+  stroke-width:4;
+  fill:none;
+  filter:drop-shadow(0 0 6px #ff3c3c);
+  transition:.2s;
+}
+
 .scissor.small{width:18px;height:18px}
 
 /* NAV */
