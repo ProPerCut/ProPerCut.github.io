@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ProperCut | Hasan Abdullah</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+<title>ProperCut | Documentary & Faceless Video Editor</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -14,15 +15,15 @@
 
 <body>
 
-<!-- CUSTOM CURSOR -->
+<!-- CURSOR -->
 <div id="cursor">
-  <img src="assets/image/scissors.png" id="scissors">
+  <div class="scissor"></div>
 </div>
 
-<!-- NAVBAR -->
+<!-- NAV -->
 <nav class="navbar">
   <div class="logo">
-    <img src="assets/image/scissors.png">
+    <div class="scissor small"></div>
     Proper<span>Cut</span>
   </div>
   <ul class="nav-links">
@@ -39,54 +40,51 @@
   <div class="hero-bg"></div>
 
   <div class="hero-left">
-    <img src="assets/image/hasan.png" class="hero-img">
     <div class="img-glow"></div>
+    <img src="assets/image/hasan.png" class="hero-img">
   </div>
 
   <div class="hero-right">
-    <h1>I’M <span>HASAN ABDULLAH</span></h1>
-    <h2>DOCUMENTARY & FACELESS VIDEO EDITOR</h2>
-
-    <div class="skill-rotator">
-      EXPERT IN <span id="skillText">CRIME DOCUMENTARY</span>
-    </div>
+    <p class="small-name">HASAN ABDULLAH</p>
+    <h1 class="typing"></h1>
 
     <p class="hero-desc">
-      I edit high-retention Crime, Mystery, Science & Automation YouTube videos  
-      for long-term Upwork & global clients.
+      High-retention Crime, Mystery, Science & Faceless YouTube Editing  
+      for long-term Upwork clients.
     </p>
-  </div>
-
-  <div class="channel-loop">
-    <div class="loop-track">
-      <span>DF</span><span>HTU</span><span>UD</span><span>TCM</span><span>MP</span>
-      <span>DF</span><span>HTU</span><span>UD</span><span>TCM</span><span>MP</span>
-    </div>
   </div>
 </section>
 
 <!-- SERVICES -->
 <section id="services" class="services">
-<h2 class="section-title">SERVICES FOR UPWORK CLIENTS</h2>
+<h2 class="section-title">SERVICES</h2>
 
-<div class="service-box">
-  <h3>🎬 Crime & Mystery Documentary</h3>
-  <p>Biker gangs, Narco subs, Coast Guard seizures, Dark history, Real cases.</p>
+<div class="service-grid">
+
+<div class="service-card">
+<span>🎬</span>
+<h3>Crime & Mystery Documentary</h3>
+<p>Biker gangs, Narco subs, Coast Guard seizures, dark history.</p>
 </div>
 
-<div class="service-box">
-  <h3>💰 Faceless / Cash Cow Channels</h3>
-  <p>Automation channels using stock, voiceover, images, motion text.</p>
+<div class="service-card">
+<span>🤖</span>
+<h3>Faceless Automation</h3>
+<p>Stock + VO + motion text cash-cow systems.</p>
 </div>
 
-<div class="service-box">
-  <h3>🚀 Science & Space Explainers</h3>
-  <p>NASA, James Webb, Space discoveries, Educational storytelling.</p>
+<div class="service-card">
+<span>🚀</span>
+<h3>Science & Space</h3>
+<p>NASA, James Webb, universe explainers.</p>
 </div>
 
-<div class="service-box">
-  <h3>🐾 Animal & Nature Facts</h3>
-  <p>High retention short & long content with cinematic pacing.</p>
+<div class="service-card">
+<span>🐾</span>
+<h3>Animal & Nature</h3>
+<p>High-retention facts & cinematic pacing.</p>
+</div>
+
 </div>
 </section>
 
@@ -95,51 +93,26 @@
 <h2 class="section-title">PORTFOLIO</h2>
 
 <div class="portfolio-grid">
-  <a href="portfolio/documentary.html">🎥 Documentary</a>
-  <a href="portfolio/faceless.html">🤖 Faceless</a>
-  <a href="portfolio/cashcow.html">💸 Cash Cow</a>
-  <a href="portfolio/science.html">🚀 Science</a>
+<a href="portfolio/documentary.html">Documentary →</a>
+<a href="portfolio/faceless.html">Faceless →</a>
+<a href="portfolio/cashcow.html">Cash Cow →</a>
+<a href="portfolio/science.html">Science →</a>
 </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="about">
-<h2 class="section-title">ABOUT ME</h2>
-
-<p>
-I’m Hasan Abdullah — 4+ years experience, 300+ projects,  
-specialized in retention-driven storytelling for YouTube.
-</p>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="contact">
-<h2 class="section-title">START A PROJECT</h2>
+<h2 class="section-title">CONTACT</h2>
 
-<form action="https://formspree.io/f/mdakvege" method="POST">
-<input name="name" placeholder="Full Name" required>
-<input name="email" placeholder="Email" required>
-<input name="channel" placeholder="YouTube Channel Link">
-<select name="service">
-<option>Documentary</option>
-<option>Faceless</option>
-<option>Cash Cow</option>
-<option>Science</option>
-</select>
-<textarea name="message" placeholder="Project details"></textarea>
-<button>SUBMIT</button>
-</form>
-
-<div class="social">
+<div class="contact-box">
+<a href="https://wa.me/8801870860540">WhatsApp</a>
 <a href="https://www.facebook.com/profile.php?id=61585959697232">Facebook</a>
 <a href="https://www.linkedin.com/in/hasan-abdullah-0963473a3">LinkedIn</a>
 <a href="https://x.com/propercutforyou">X</a>
-<a href="https://wa.me/8801870860540">WhatsApp</a>
-<p>Email: propercutforyou@gmail.com</p>
+<p>propercutforyou@gmail.com</p>
 </div>
 </section>
 
 <script src="script.js"></script>
 </body>
 </html>
-
