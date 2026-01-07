@@ -338,3 +338,54 @@ body{cursor:auto}
 .portfolio-card:hover::before{
   opacity:.12;
 }
+/* PORTFOLIO PAGE */
+.portfolio-page{
+  padding:160px 10%;
+  text-align:center;
+}
+
+.portfolio-title{
+  font-family:Anton;
+  font-size:3.8rem;
+}
+
+.portfolio-sub{
+  margin:15px 0 70px;
+  color:#aaa;
+}
+
+/* VIDEO GRID */
+.video-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+/* VIDEO CARD */
+.video-card{
+  padding:35px 25px;
+  background:#0b0b0b;
+  border:1px solid #1a1a1a;
+  border-radius:18px;
+  text-decoration:none;
+  color:#fff;
+  transition:.4s;
+}
+
+.video-thumb{
+  width:70px;
+  height:70px;
+  margin:0 auto 18px;
+  border-radius:50%;
+  background:#ff3c3c;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.5rem;
+}
+
+/* HOVER */
+.video-card:hover{
+  transform:translateY(-12px);
+  box-shadow:0 25px 60px rgba(0,0,0,.7);
+}
