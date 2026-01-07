@@ -112,3 +112,23 @@ gsap.from(".hero-text > *",{
   delay:.4,
   ease:"power3.out"
 });
+/* SERVICES HOVER ANIMATION */
+document.querySelectorAll(".service-card").forEach(card=>{
+  card.addEventListener("mouseenter",()=>{
+    gsap.to(card.querySelector(".service-icon"),{
+      scale:1.3,
+      rotate:6,
+      duration:.3,
+      ease:"power3.out"
+    });
+  });
+
+  card.addEventListener("mouseleave",()=>{
+    gsap.to(card.querySelector(".service-icon"),{
+      scale:1,
+      rotate:0,
+      duration:.3,
+      ease:"power3.out"
+    });
+  });
+});
