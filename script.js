@@ -1,50 +1,19 @@
-const cursor = document.getElementById("cursor");
-const scissor = document.getElementById("scissor");
+const cursor=document.getElementById("cursor")
+const scissors=document.getElementById("scissors")
+const cutSound=new Audio("assets/sound/cut.mp3")
 
-document.addEventListener("mousemove", e=>{
-  gsap.to(cursor,{
-    x:e.clientX,
-    y:e.clientY,
-    duration:.08
-  });
-});
+document.addEventListener("mousemove",e=>{
+  gsap.to(cursor,{x:e.clientX,y:e.clientY,duration:.1})
+})
 
-/* TYPING EFFECT */
-const texts=[
-  "FACELESS VIDEO EDITOR",
-  "CRIME DOCUMENTARY EDITOR",
-  "RETENTION STORYTELLER"
-];
-let t=0,c=0;
-const el=document.getElementById("typingText");
+document.addEventListener("mousedown",()=>{
+  cutSound.currentTime=0
+  cutSound.play()
+  gsap.fromTo(scissors,{scale:1},{scale:.6,repeat:1,yoyo:true})
+})
 
-function type(){
-  if(c<texts[t].length){
-    el.textContent+=texts[t][c++];
-    setTimeout(type,80);
-  }else{
-    setTimeout(erase,1500);
-  }
-}
-function erase(){
-  if(c>0){
-    el.textContent=texts[t].slice(0,--c);
-    setTimeout(erase,50);
-  }else{
-    t=(t+1)%texts.length;
-    setTimeout(type,300);
-  }
-}
-type();
-
-/* LOADER */
-window.addEventListener("load",()=>{
-  gsap.to("#loader",{
-    yPercent:-100,
-    duration:1.2,
-    onComplete:()=>{
-      document.body.classList.add("loaded");
-      document.getElementById("loader").remove();
-    }
-  });
-});
+const skills=["CRIME DOCUMENTARY","FACELESS AUTOMATION","SCIENCE EXPLAINER","MYSTERY STORIES"]
+let i=0
+setInterval(()=>{
+  document.getElementById("skillText").innerText=skills[i++%skills.length]
+},2500)
