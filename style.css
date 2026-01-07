@@ -281,3 +281,60 @@ body{cursor:auto}
   stroke:#00ffcc;
   filter:drop-shadow(0 0 8px #00ffcc);
 }
+/* PORTFOLIO */
+.portfolio{
+  padding:140px 10%;
+}
+
+.portfolio-grid{
+  margin-top:70px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:35px;
+}
+
+.portfolio-card{
+  position:relative;
+  padding:50px 30px;
+  border-radius:22px;
+  background:linear-gradient(180deg,#0c0c0c,#070707);
+  border:1px solid #1a1a1a;
+  text-decoration:none;
+  color:#fff;
+  transition:.4s;
+  overflow:hidden;
+}
+
+/* ICON */
+.pf-icon{
+  font-size:2.5rem;
+  display:block;
+  margin-bottom:20px;
+}
+
+/* TEXT */
+.portfolio-card h3{
+  font-size:1.5rem;
+  margin-bottom:8px;
+}
+.portfolio-card p{
+  color:#aaa;
+  font-size:.95rem;
+}
+
+/* HOVER */
+.portfolio-card:hover{
+  transform:translateY(-14px);
+  box-shadow:0 30px 70px rgba(0,0,0,.7);
+}
+.portfolio-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,transparent,#ff3c3c,transparent);
+  opacity:0;
+  transition:.4s;
+}
+.portfolio-card:hover::before{
+  opacity:.12;
+}
