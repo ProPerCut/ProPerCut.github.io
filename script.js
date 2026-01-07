@@ -256,3 +256,14 @@ window.addEventListener("load",()=>{
     onComplete:()=>document.getElementById("loader").remove()
   });
 });
+gsap.from(".service-card",{
+  scrollTrigger:{
+    trigger:"#services",
+    start:"top 70%"
+  },
+  y:40,
+  opacity:0,
+  duration:.8,
+  stagger:.25,
+  ease:"power3.out"
+});
