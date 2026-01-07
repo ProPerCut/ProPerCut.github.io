@@ -143,3 +143,11 @@ gsap.from(".portfolio-card",{
   duration:1,
   ease:"power3.out"
 });
+document.querySelectorAll(".contact-social a").forEach(box=>{
+  box.addEventListener("mouseenter",()=>{
+    gsap.to(box,{y:-12,scale:1.05,duration:.3});
+  });
+  box.addEventListener("mouseleave",()=>{
+    gsap.to(box,{y:0,scale:1,duration:.3});
+  });
+});
