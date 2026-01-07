@@ -3,10 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ProperCut | Hasan Abdullah</title>
 
-<title>ProperCut | Documentary Editor</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -15,36 +14,23 @@
 
 <body>
 
-<!-- LOADER -->
-<div id="loader">
-  <div class="loader-inner">
-    <h1 class="loader-logo">PROPER<span>CUT</span></h1>
-    <p class="loader-text">Crafting cinematic stories...</p>
-  </div>
-</div>
-
 <!-- CUSTOM CURSOR -->
 <div id="cursor">
-  <svg id="scissor" width="36" height="36" viewBox="0 0 100 100">
-    <circle cx="30" cy="70" r="12" />
-    <circle cx="70" cy="70" r="12" />
-    <line x1="30" y1="60" x2="50" y2="20" />
-    <line x1="70" y1="60" x2="50" y2="20" />
-  </svg>
+  <img src="assets/image/scissors.png" id="scissors">
 </div>
 
 <!-- NAVBAR -->
 <nav class="navbar">
   <div class="logo">
-    <span class="logo-icon">✂</span>
+    <img src="assets/image/scissors.png">
     Proper<span>Cut</span>
   </div>
-
   <ul class="nav-links">
-    <li><a href="#home" class="nav-item">Home</a></li>
-    <li><a href="#services" class="nav-item">Services</a></li>
-    <li><a href="#portfolio" class="nav-item">Portfolio</a></li>
-    <li><a href="#contact" class="nav-item">Contact</a></li>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
@@ -52,56 +38,105 @@
 <section id="home" class="hero">
   <div class="hero-bg"></div>
 
-  <div class="hero-content">
-    <div class="hero-image-wrap">
-      <img src="assets/image/hasan.png" alt="Hasan Abdullah">
+  <div class="hero-left">
+    <img src="assets/image/hasan.png" class="hero-img">
+    <div class="img-glow"></div>
+  </div>
+
+  <div class="hero-right">
+    <h1>I’M <span>HASAN ABDULLAH</span></h1>
+    <h2>DOCUMENTARY & FACELESS VIDEO EDITOR</h2>
+
+    <div class="skill-rotator">
+      EXPERT IN <span id="skillText">CRIME DOCUMENTARY</span>
     </div>
 
-    <div class="hero-text">
-      <p class="hero-name">HASAN ABDULLAH</p>
+    <p class="hero-desc">
+      I edit high-retention Crime, Mystery, Science & Automation YouTube videos  
+      for long-term Upwork & global clients.
+    </p>
+  </div>
 
-      <h1 class="hero-title">
-        DOCUMENTARY &<br>
-        <span id="typingText"></span>
-      </h1>
-
-      <p class="hero-sub">
-        High-retention crime, mystery & faceless YouTube documentaries
-        for global clients.
-      </p>
+  <div class="channel-loop">
+    <div class="loop-track">
+      <span>DF</span><span>HTU</span><span>UD</span><span>TCM</span><span>MP</span>
+      <span>DF</span><span>HTU</span><span>UD</span><span>TCM</span><span>MP</span>
     </div>
   </div>
 </section>
 
 <!-- SERVICES -->
 <section id="services" class="services">
-  <h2 class="section-title">SERVICES</h2>
+<h2 class="section-title">SERVICES FOR UPWORK CLIENTS</h2>
 
-  <div class="services-grid">
-    <div class="service-card">
-      <div class="service-icon">🎬</div>
-      <h3>Crime Documentary</h3>
-      <p>Dark storytelling & cinematic pacing.</p>
-    </div>
+<div class="service-box">
+  <h3>🎬 Crime & Mystery Documentary</h3>
+  <p>Biker gangs, Narco subs, Coast Guard seizures, Dark history, Real cases.</p>
+</div>
 
-    <div class="service-card">
-      <div class="service-icon">🤖</div>
-      <h3>Faceless Automation</h3>
-      <p>Cash cow & AI-driven channels.</p>
-    </div>
+<div class="service-box">
+  <h3>💰 Faceless / Cash Cow Channels</h3>
+  <p>Automation channels using stock, voiceover, images, motion text.</p>
+</div>
 
-    <div class="service-card">
-      <div class="service-icon">🚀</div>
-      <h3>Science Explainers</h3>
-      <p>Space, physics & educational content.</p>
-    </div>
-  </div>
+<div class="service-box">
+  <h3>🚀 Science & Space Explainers</h3>
+  <p>NASA, James Webb, Space discoveries, Educational storytelling.</p>
+</div>
+
+<div class="service-box">
+  <h3>🐾 Animal & Nature Facts</h3>
+  <p>High retention short & long content with cinematic pacing.</p>
+</div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="portfolio">
+<h2 class="section-title">PORTFOLIO</h2>
+
+<div class="portfolio-grid">
+  <a href="portfolio/documentary.html">🎥 Documentary</a>
+  <a href="portfolio/faceless.html">🤖 Faceless</a>
+  <a href="portfolio/cashcow.html">💸 Cash Cow</a>
+  <a href="portfolio/science.html">🚀 Science</a>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+<h2 class="section-title">ABOUT ME</h2>
+
+<p>
+I’m Hasan Abdullah — 4+ years experience, 300+ projects,  
+specialized in retention-driven storytelling for YouTube.
+</p>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="contact">
-  <h2 class="contact-title">LET’S WORK TOGETHER</h2>
-  <p class="contact-desc">propercutforyou@gmail.com</p>
+<h2 class="section-title">START A PROJECT</h2>
+
+<form action="https://formspree.io/f/mdakvege" method="POST">
+<input name="name" placeholder="Full Name" required>
+<input name="email" placeholder="Email" required>
+<input name="channel" placeholder="YouTube Channel Link">
+<select name="service">
+<option>Documentary</option>
+<option>Faceless</option>
+<option>Cash Cow</option>
+<option>Science</option>
+</select>
+<textarea name="message" placeholder="Project details"></textarea>
+<button>SUBMIT</button>
+</form>
+
+<div class="social">
+<a href="https://www.facebook.com/profile.php?id=61585959697232">Facebook</a>
+<a href="https://www.linkedin.com/in/hasan-abdullah-0963473a3">LinkedIn</a>
+<a href="https://x.com/propercutforyou">X</a>
+<a href="https://wa.me/8801870860540">WhatsApp</a>
+<p>Email: propercutforyou@gmail.com</p>
+</div>
 </section>
 
 <script src="script.js"></script>
