@@ -122,7 +122,7 @@ body{font-family:Inter;background:#050505;color:#fff;cursor:none}
   background:
     linear-gradient(to right, #000 30%, transparent),
     url("assets/image/bg.jpg") center/cover;
-  opacity:.50;
+  opacity:.70;
   z-index:0;
 }
 
