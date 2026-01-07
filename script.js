@@ -21,16 +21,49 @@ function cinematicSound(){
 const cursor = document.getElementById("cursor");
 const scissor = document.getElementById("scissor");
 
+/* cursor glow */
+const glow = document.getElementById("cursor-glow");
+
 const leftSound = new Audio("assets/sound/left.mp3");
 const rightSound = new Audio("assets/sound/right.mp3");
 
+/* ================= MOUSE MOVE ================= */
+let lastX = window.innerWidth / 2;
+let lastY = window.innerHeight / 2;
+
 document.addEventListener("mousemove", e => {
+
+  /* cursor follow */
   gsap.to(cursor,{
     x:e.clientX,
     y:e.clientY,
     duration:.08,
     ease:"power2.out"
   });
+
+  /* glow follow */
+  if(glow){
+    gsap.to(glow,{
+      x:e.clientX,
+      y:e.clientY,
+      duration:.3,
+      ease:"power2.out"
+    });
+  }
+
+  /* scissor direction rotate */
+  const dx = e.clientX - lastX;
+  const dy = e.clientY - lastY;
+  const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+
+  gsap.to(scissor,{
+    rotate: angle,
+    duration:.15,
+    ease:"power2.out"
+  });
+
+  lastX = e.clientX;
+  lastY = e.clientY;
 });
 
 /* LEFT CLICK */
@@ -40,7 +73,7 @@ document.addEventListener("mousedown", e=>{
     leftSound.play();
     gsap.fromTo(scissor,
       {scale:1},
-      {scale:.7,rotate:-20,yoyo:true,repeat:1}
+      {scale:.7,rotate:-20,yoyo:true,repeat:1,duration:.15}
     );
   }
 });
@@ -52,18 +85,43 @@ document.addEventListener("contextmenu", e=>{
   rightSound.play();
   gsap.fromTo(scissor,
     {scale:1},
-    {scale:.7,rotate:20,yoyo:true,repeat:1}
+    {scale:.7,rotate:20,yoyo:true,repeat:1,duration:.15}
   );
 });
 
-/* typing */
-const text="DOCUMENTARY & FACELESS VIDEO EDITOR"
-let i=0
+/* HOVER EFFECT FOR SCISSOR */
+document.querySelectorAll("a, button, .logo, .service-card, .portfolio-card").forEach(el=>{
+  el.addEventListener("mouseenter",()=>{
+    gsap.to(scissor,{
+      scale:1.6,
+      rotate:-45,
+      duration:.25,
+      ease:"power3.out"
+    });
+    scissor.style.stroke="#00ffcc";
+    scissor.style.filter="drop-shadow(0 0 12px #00ffcc)";
+  });
+
+  el.addEventListener("mouseleave",()=>{
+    gsap.to(scissor,{
+      scale:1,
+      duration:.25,
+      ease:"power3.out"
+    });
+    scissor.style.stroke="#ff3c3c";
+    scissor.style.filter="drop-shadow(0 0 6px #ff3c3c)";
+  });
+});
+
+/* typing (static) */
+const text="DOCUMENTARY & FACELESS VIDEO EDITOR";
+let i=0;
 setInterval(()=>{
- document.querySelector(".typing").innerText=text.slice(0,i++)
- if(i>text.length)i=0
-},120)
-// NAV ITEM HOVER ANIMATION
+ document.querySelector(".typing").innerText=text.slice(0,i++);
+ if(i>text.length)i=0;
+},120);
+
+/* NAV ITEM HOVER ANIMATION */
 document.querySelectorAll(".nav-item").forEach(item=>{
   item.addEventListener("mouseenter",()=>{
     gsap.to(item,{scale:1.1,duration:.2});
@@ -81,7 +139,8 @@ document.querySelectorAll(".nav-item").forEach(link=>{
     target.scrollIntoView({behavior:"smooth"});
   });
 });
-/* TYPING EFFECT */
+
+/* TYPING EFFECT (animated) */
 const typingTexts = [
   "FACELESS VIDEO EDITOR",
   "CRIME DOCUMENTARY EDITOR",
@@ -115,6 +174,7 @@ function eraseEffect(){
 
 typingEl.textContent="";
 typeEffect();
+
 /* HERO LOAD ANIMATION */
 gsap.from(".hero-image-wrap img",{
   x:-80,
@@ -131,6 +191,7 @@ gsap.from(".hero-text > *",{
   delay:.4,
   ease:"power3.out"
 });
+
 /* SERVICES HOVER ANIMATION */
 document.querySelectorAll(".service-card").forEach(card=>{
   card.addEventListener("mouseenter",()=>{
@@ -151,6 +212,8 @@ document.querySelectorAll(".service-card").forEach(card=>{
     });
   });
 });
+
+/* PORTFOLIO SCROLL */
 gsap.from(".portfolio-card",{
   scrollTrigger:{
     trigger:"#portfolio",
@@ -162,6 +225,8 @@ gsap.from(".portfolio-card",{
   duration:1,
   ease:"power3.out"
 });
+
+/* SOCIAL HOVER */
 document.querySelectorAll(".contact-social a").forEach(box=>{
   box.addEventListener("mouseenter",()=>{
     gsap.to(box,{y:-12,scale:1.05,duration:.3});
@@ -170,6 +235,16 @@ document.querySelectorAll(".contact-social a").forEach(box=>{
     gsap.to(box,{y:0,scale:1,duration:.3});
   });
 });
+
+/* LOGO AUTO ROTATE */
+gsap.to(".logo-icon",{
+  rotate:360,
+  duration:6,
+  repeat:-1,
+  ease:"linear"
+});
+
+/* LOADER EXIT */
 window.addEventListener("load",()=>{
   cinematicSound();
 
