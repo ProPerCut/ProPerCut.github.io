@@ -246,15 +246,21 @@ gsap.to(".logo-icon",{
 
 /* LOADER EXIT */
 window.addEventListener("load",()=>{
+
   cinematicSound();
 
   gsap.to("#loader",{
     yPercent:-100,
-    delay:1.6,
     duration:1.2,
     ease:"power4.inOut",
-    onComplete:()=>document.getElementById("loader").remove()
+    onComplete:()=>{
+      document.body.classList.add("loaded");
+      document.getElementById("loader").remove();
+    }
   });
+
+});
+
 });
 gsap.from(".service-card",{
   scrollTrigger:{
