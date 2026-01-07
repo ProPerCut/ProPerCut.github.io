@@ -95,3 +95,19 @@ function eraseEffect(){
 
 typingEl.textContent="";
 typeEffect();
+/* HERO LOAD ANIMATION */
+gsap.from(".hero-image-wrap img",{
+  x:-80,
+  opacity:0,
+  duration:1.2,
+  ease:"power3.out"
+});
+
+gsap.from(".hero-text > *",{
+  y:40,
+  opacity:0,
+  duration:1,
+  stagger:.15,
+  delay:.4,
+  ease:"power3.out"
+});
