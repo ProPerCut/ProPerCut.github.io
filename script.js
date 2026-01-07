@@ -1,3 +1,23 @@
+/* CINEMATIC LOADER SOUND */
+function cinematicSound(){
+  const ctx = new (window.AudioContext||window.webkitAudioContext)();
+  const osc = ctx.createOscillator();
+  const gain = ctx.createGain();
+
+  osc.type="sawtooth";
+  osc.frequency.value=120;
+  gain.gain.value=0.001;
+
+  osc.connect(gain);
+  gain.connect(ctx.destination);
+
+  osc.start();
+  gain.gain.exponentialRampToValueAtTime(0.3, ctx.currentTime+.3);
+  osc.frequency.exponentialRampToValueAtTime(40, ctx.currentTime+1);
+  gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime+1.2);
+  osc.stop(ctx.currentTime+1.3);
+}
+
 const cursor = document.getElementById("cursor");
 const scissor = document.getElementById("scissor");
 
@@ -148,5 +168,16 @@ document.querySelectorAll(".contact-social a").forEach(box=>{
   });
   box.addEventListener("mouseleave",()=>{
     gsap.to(box,{y:0,scale:1,duration:.3});
+  });
+});
+window.addEventListener("load",()=>{
+  cinematicSound();
+
+  gsap.to("#loader",{
+    yPercent:-100,
+    delay:1.6,
+    duration:1.2,
+    ease:"power4.inOut",
+    onComplete:()=>document.getElementById("loader").remove()
   });
 });
